@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { siteConfig } from '@/config/site';
 
 interface EmailContactModalProps {
   isOpen: boolean;
@@ -11,11 +12,11 @@ interface EmailContactModalProps {
 }
 
 export default function EmailContactModal({ isOpen, onClose, title }: EmailContactModalProps) {
-  const { t } = useLanguage();
-  const emailAddress = "x.stark.dylan@gmail.com";
+  const { language } = useLanguage();
+  const emailAddress = siteConfig.contact.email;
 
-  const displayTitle = title || t('email.default.title');
-  const emailSubject = t('email.subject');
+  const displayTitle = title || (language === 'zh' ? '联系我们' : 'Contact Us');
+  const emailSubject = siteConfig.contact.emailSubject[language];
 
   const handleSendEmail = () => {
     window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}`;
@@ -23,7 +24,7 @@ export default function EmailContactModal({ isOpen, onClose, title }: EmailConta
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
-    alert(t('email.copied'));
+    alert(language === 'zh' ? '邮箱地址已复制！' : 'Email address copied!');
   };
 
   if (!isOpen) return null;
@@ -58,11 +59,15 @@ export default function EmailContactModal({ isOpen, onClose, title }: EmailConta
 
           <div className="space-y-4">
             <p className="text-gray-700 dark:text-gray-300">
-              {t('email.description')}
+              {language === 'zh'
+                ? '请通过以下邮箱地址联系我们，我们将尽快回复您的咨询。'
+                : 'Please contact us via the email address below, and we will respond to your inquiry as soon as possible.'}
             </p>
 
             <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{t('email.address.label')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                {language === 'zh' ? '邮箱地址' : 'Email Address'}
+              </p>
               <div className="flex items-center justify-between gap-2">
                 <code className="text-black dark:text-white font-mono text-sm flex-1">
                   {emailAddress}
@@ -71,13 +76,15 @@ export default function EmailContactModal({ isOpen, onClose, title }: EmailConta
                   onClick={handleCopyEmail}
                   className="text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 text-sm font-semibold whitespace-nowrap"
                 >
-                  {t('email.copy')}
+                  {language === 'zh' ? '复制' : 'Copy'}
                 </button>
               </div>
             </div>
 
             <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{t('email.subject.label')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                {language === 'zh' ? '建议邮件主题' : 'Suggested Subject'}
+              </p>
               <code className="text-gray-900 dark:text-white font-mono text-sm">
                 {emailSubject}
               </code>
@@ -85,7 +92,10 @@ export default function EmailContactModal({ isOpen, onClose, title }: EmailConta
 
             <div className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 p-4">
               <p className="text-sm text-gray-800 dark:text-gray-200">
-                <strong>{t('email.tip')}</strong>{t('email.tip.text')}
+                <strong>{language === 'zh' ? '💡 提示：' : '💡 Tip: '}</strong>
+                {language === 'zh'
+                  ? '在邮件中请详细描述您的问题或需求，以便我们更好地为您服务。'
+                  : 'Please describe your question or needs in detail in the email so we can serve you better.'}
               </p>
             </div>
 
@@ -94,13 +104,13 @@ export default function EmailContactModal({ isOpen, onClose, title }: EmailConta
                 onClick={handleSendEmail}
                 className="flex-1 px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-all"
               >
-                {t('email.send')}
+                {language === 'zh' ? '发送邮件' : 'Send Email'}
               </button>
               <button
                 onClick={onClose}
                 className="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
               >
-                {t('email.close')}
+                {language === 'zh' ? '关闭' : 'Close'}
               </button>
             </div>
           </div>

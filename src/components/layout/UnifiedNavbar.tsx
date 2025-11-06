@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useMode } from '@/contexts/ModeContext';
 import BrandName from '@/components/custom/BrandName';
 import LocaleLink from '@/components/navigation/LocaleLink';
 
@@ -14,8 +14,8 @@ export default function UnifiedNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const { theme, toggleTheme, mounted } = useTheme();
   const { language, toggleLanguage, t } = useLanguage();
+  const { mode, theme } = useMode();
 
   const navItems = [
     {
@@ -23,49 +23,16 @@ export default function UnifiedNavbar() {
       link: "/",
     },
     {
-      name: t('nav.training'),
-      link: "/splan/join-us",
+      name: language === 'zh' ? '职业交易培训' : 'Trading Training',
+      link: "/training/forex",
     },
     {
-      name: language === 'zh' ? '教育' : 'Education',
-      link: "/education",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: language === 'zh' ? '基础知识' : 'Basics', link: '/education#basics' },
-        { name: language === 'zh' ? '技术分析' : 'Technical Analysis', link: '/education#technical' },
-        { name: language === 'zh' ? '交易策略' : 'Trading Strategies', link: '/education#strategies' },
-        { name: language === 'zh' ? '风险管理' : 'Risk Management', link: '/education#risk' },
-      ]
+      name: language === 'zh' ? '个人品牌孵化' : 'Brand Incubation',
+      link: "/training/social-media",
     },
     {
       name: t('nav.blog'),
-      link: "/splan/blog",
-    },
-    {
-      name: t('nav.psychology'),
-      link: "/splan/psychology-test",
-    },
-    {
-      name: t('nav.dashboard'),
-      link: "/dashboard",
-    },
-    {
-      name: t('nav.tradingTools'),
-      link: "/tools/position-calculator",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: language === 'zh' ? '仓位计算器' : 'Position Calculator', link: '/tools/position-calculator' },
-        { name: language === 'zh' ? '风险回报计算器' : 'Risk/Reward Calculator', link: '/tools/risk-reward-calculator' },
-        { name: language === 'zh' ? '点值计算器' : 'Pip Calculator', link: '/tools/pip-calculator' },
-      ]
-    },
-    {
-      name: t('nav.faq'),
-      link: "/splan/faq",
-    },
-    {
-      name: t('nav.membership'),
-      link: "/splan/donate",
+      link: "/blog",
     },
   ];
 
@@ -101,9 +68,9 @@ export default function UnifiedNavbar() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg'
-          : 'bg-white dark:bg-gray-900'
-      } border-b border-gray-200 dark:border-gray-800`}
+          ? 'bg-white/70 backdrop-blur-xl shadow-lg'
+          : 'bg-white/50 backdrop-blur-md'
+      } border-b border-gray-200/50`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -128,9 +95,10 @@ export default function UnifiedNavbar() {
                   <span
                     className={`relative z-10 ${
                       isActive(item.link)
-                        ? 'text-black dark:text-white font-bold'
-                        : 'text-gray-600 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white'
+                        ? 'font-bold'
+                        : 'text-gray-600 hover:text-gray-900'
                     }`}
+                    style={isActive(item.link) ? { color: theme.primary } : {}}
                   >
                     {item.name}
                   </span>
@@ -140,9 +108,10 @@ export default function UnifiedNavbar() {
                         openDropdown === item.name ? 'rotate-180' : ''
                       } ${
                         isActive(item.link)
-                          ? 'text-black dark:text-white'
-                          : 'text-gray-600 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white'
+                          ? ''
+                          : 'text-gray-600'
                       }`}
+                      style={isActive(item.link) ? { color: theme.primary } : {}}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -153,7 +122,8 @@ export default function UnifiedNavbar() {
                   {isActive(item.link) && !item.hasDropdown && (
                     <motion.div
                       layoutId="navbar-indicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-black dark:bg-white"
+                      className="absolute bottom-0 left-0 right-0 h-0.5"
+                      style={{ backgroundColor: theme.primary }}
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -168,13 +138,13 @@ export default function UnifiedNavbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-1 w-56 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-lg z-50"
+                        className="absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 shadow-lg z-50"
                       >
                         {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
                           <LocaleLink
                             key={dropdownIndex}
                             href={dropdownItem.link}
-                            className="block px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white transition-colors border-b border-gray-100 dark:border-gray-800 last:border-b-0"
+                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors border-b border-gray-100 last:border-b-0"
                           >
                             {dropdownItem.name}
                           </LocaleLink>
@@ -189,30 +159,10 @@ export default function UnifiedNavbar() {
 
           {/* Right Side Actions (Desktop) */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              title={theme === 'light' ? (language === 'zh' ? '切换到深色模式' : 'Switch to Dark Mode') : (language === 'zh' ? '切换到浅色模式' : 'Switch to Light Mode')}
-              aria-label={theme === 'light' ? 'Dark mode' : 'Light mode'}
-            >
-              {theme === 'light' ? (
-                // Moon icon
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              ) : (
-                // Sun icon
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              )}
-            </button>
-
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="px-3 py-2 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-medium"
+              className="px-3 py-2 border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors text-sm font-medium"
               title={language === 'zh' ? 'Switch to English' : '切换到中文'}
             >
               {language === 'zh' ? 'EN' : '中文'}
@@ -220,17 +170,21 @@ export default function UnifiedNavbar() {
 
             {/* Join Us Button */}
             <LocaleLink
-              href="/splan/join-us"
-              className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold border border-black dark:border-white hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors"
+              href="/landing"
+              className="px-4 py-2 text-white text-sm font-semibold border transition-all hover:opacity-90"
+              style={{
+                backgroundColor: theme.primary,
+                borderColor: theme.primary
+              }}
             >
-              {t('nav.join')}
+              {language === 'zh' ? '开始学习' : 'Get Started'}
             </LocaleLink>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -267,7 +221,7 @@ export default function UnifiedNavbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900"
+            className="md:hidden border-t border-gray-200 bg-white"
           >
             <div className="px-4 py-4 space-y-2">
               {navItems.map((item, index) => (
@@ -278,9 +232,10 @@ export default function UnifiedNavbar() {
                         onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
                         className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium transition-colors ${
                           isActive(item.link)
-                            ? 'bg-gray-100 dark:bg-gray-800 text-black dark:text-white font-bold'
-                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                            ? 'bg-gray-100 font-bold'
+                            : 'text-gray-700 hover:bg-gray-100'
                         }`}
+                        style={isActive(item.link) ? { color: theme.primary } : {}}
                       >
                         <span>{item.name}</span>
                         <svg
@@ -300,7 +255,7 @@ export default function UnifiedNavbar() {
                             <LocaleLink
                               key={dropdownIndex}
                               href={dropdownItem.link}
-                              className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white transition-colors"
+                              className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-black transition-colors"
                             >
                               {dropdownItem.name}
                             </LocaleLink>
@@ -313,9 +268,10 @@ export default function UnifiedNavbar() {
                       href={item.link}
                       className={`block px-4 py-3 text-sm font-medium transition-colors ${
                         isActive(item.link)
-                          ? 'bg-gray-100 dark:bg-gray-800 text-black dark:text-white font-bold'
-                          : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                          ? 'bg-gray-100 font-bold'
+                          : 'text-gray-700 hover:bg-gray-100'
                       }`}
+                      style={isActive(item.link) ? { color: theme.primary } : {}}
                     >
                       {item.name}
                     </LocaleLink>
@@ -323,45 +279,26 @@ export default function UnifiedNavbar() {
                 </div>
               ))}
 
-              {/* Mobile Theme and Language Toggle */}
-              <div className="px-4 pt-2 space-y-2">
-                {/* Theme Toggle */}
-                <button
-                  onClick={toggleTheme}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-medium flex items-center justify-center gap-2"
-                  aria-label={theme === 'light' ? 'Dark mode' : 'Light mode'}
-                >
-                  {theme === 'light' ? (
-                    <>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                      </svg>
-                      <span>{language === 'zh' ? '深色模式' : 'Dark Mode'}</span>
-                    </>
-                  ) : (
-                    <>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
-                      <span>{language === 'zh' ? '浅色模式' : 'Light Mode'}</span>
-                    </>
-                  )}
-                </button>
-
+              {/* Mobile Language Toggle */}
+              <div className="px-4 pt-2">
                 {/* Language Toggle */}
                 <button
                   onClick={toggleLanguage}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-medium"
+                  className="w-full px-4 py-3 border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors text-sm font-medium"
                 >
                   {language === 'zh' ? 'EN' : '中文'}
                 </button>
               </div>
 
               <LocaleLink
-                href="/splan/join-us"
-                className="block px-4 py-3 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold text-center mt-4 border border-black dark:border-white"
+                href="/landing"
+                className="block px-4 py-3 text-white text-sm font-semibold text-center mt-4 border transition-all"
+                style={{
+                  backgroundColor: theme.primary,
+                  borderColor: theme.primary
+                }}
               >
-                {t('nav.join')}
+                {language === 'zh' ? '开始学习' : 'Get Started'}
               </LocaleLink>
             </div>
           </motion.div>

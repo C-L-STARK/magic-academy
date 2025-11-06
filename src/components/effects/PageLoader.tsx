@@ -23,36 +23,50 @@ export default function PageLoader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="fixed inset-0 z-[100] bg-white dark:bg-black flex items-center justify-center"
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-white"
         >
           {/* Logo 和加载动画 */}
-          <div className="flex flex-col items-center gap-8">
-            {/* Logo */}
+          <div className="relative z-10 flex flex-col items-center gap-6">
+            {/* Logo with Simple Gradient Text */}
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center"
             >
-              <div className="text-5xl font-bold">
-                <span className="text-black dark:text-white">FX</span>
-                <span className="text-gray-400 dark:text-gray-600">Killer</span>
+              <div className="text-6xl lg:text-7xl font-black mb-2">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-500">
+                  魔道院
+                </span>
+              </div>
+              <div className="text-lg font-bold text-gray-600">
+                Magic Academy
               </div>
             </motion.div>
 
-            {/* 加载条 */}
-            <div className="w-48 h-1 bg-gray-200 dark:bg-gray-800 overflow-hidden">
+            {/* Simple Loading Bar */}
+            <div className="relative w-48 h-1 bg-gray-200 rounded-full overflow-hidden">
               <motion.div
                 initial={{ x: "-100%" }}
                 animate={{ x: "100%" }}
                 transition={{
-                  duration: 1.2,
+                  duration: 1.5,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "easeInOut"
                 }}
-                className="h-full w-1/2 bg-black dark:bg-white"
+                className="h-full w-1/2 rounded-full bg-gradient-to-r from-orange-500 to-blue-500"
               />
             </div>
+
+            {/* Simple Loading Text */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="text-sm font-medium text-gray-500"
+            >
+              Loading...
+            </motion.div>
           </div>
         </motion.div>
       )}

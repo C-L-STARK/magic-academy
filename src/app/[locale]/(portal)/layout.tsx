@@ -9,6 +9,7 @@ import Providers from "@/components/providers/Providers";
 import MouseFollower from "@/components/effects/MouseFollower";
 import ScrollProgress, { BackToTop } from "@/components/effects/ScrollProgress";
 import PageLoader from "@/components/effects/PageLoader";
+import ContactFormFloat from "@/components/custom/ContactFormFloat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,36 +18,47 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fxkiller.com'),
+  metadataBase: new URL('https://magic-academy.com'),
   title: {
-    default: "FX Killer - Professional FX Trader Training Platform | 外汇交易职业交易员培训",
-    template: "%s | FX Killer"
+    default: "魔道院 Magic Academy - 交易·教育·自媒体 三位一体的职业技能孵化器",
+    template: "%s | 魔道院 Magic Academy"
   },
-  description: "FX Killer - 专注于外汇交易的职业交易员培训平台。提供系统化外汇交易培训、实战训练和资金支持。通过专业考核即可获得资金管理权限，分润比例高达90%。培养真正适合外汇市场的专业交易员。",
-  keywords: ["FX Killer", "外汇交易", "外汇培训", "职业交易员", "FX交易", "外汇交易员", "外汇培训平台", "forex交易", "专业交易员培训", "外汇实战", "外汇技能培训"],
-  authors: [{ name: "FX Killer" }],
-  creator: "FX Killer",
-  publisher: "FX Killer",
+  description: "魔道院（Magic Academy）- 专业的职业技能培训平台。提供外汇交易培训、在线教育课程、自媒体运营培训。三大业务板块助力你的职业发展，打造个人影响力，实现技能变现。",
+  keywords: ["魔道院", "Magic Academy", "外汇交易", "在线教育", "自媒体运营", "职业培训", "技能孵化", "个人品牌", "交易员培训", "内容创作", "知识付费"],
+  authors: [{ name: "魔道院 Magic Academy" }],
+  creator: "魔道院 Magic Academy",
+  publisher: "魔道院 Magic Academy",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' }
+    ],
+    apple: [
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' }
+    ]
+  },
   openGraph: {
     type: "website",
     locale: "zh_CN",
-    url: "https://fxkiller.com",
-    siteName: "FX Killer",
-    title: "FX Killer - Professional FX Trader Training Platform",
-    description: "专注于外汇交易的职业交易员培训平台。提供系统化外汇交易培训、实战训练和资金支持。通过专业考核即可获得资金管理权限，分润比例高达90%。",
+    url: "https://magic-academy.com",
+    siteName: "魔道院 Magic Academy",
+    title: "魔道院 Magic Academy - 职业技能孵化器",
+    description: "专业的职业技能培训平台。提供外汇交易培训、在线教育课程、自媒体运营培训。三大业务板块助力你的职业发展。",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "FX Killer"
+        alt: "魔道院 Magic Academy"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "FX Killer - Professional FX Trader Training Platform",
-    description: "专注于外汇交易的职业交易员培训平台。提供系统化外汇交易培训、实战训练和资金支持。",
+    title: "魔道院 Magic Academy - 职业技能孵化器",
+    description: "专业的职业技能培训平台。提供外汇交易培训、在线教育课程、自媒体运营培训。",
     images: ["/og-image.jpg"]
   },
   robots: {
@@ -80,25 +92,9 @@ export default async function PortalLayout({
   const lang = locale === 'en' ? 'en-US' : 'zh-CN';
 
   return (
-    <html lang={lang} className={inter.variable} suppressHydrationWarning style={{ colorScheme: 'light dark' }}>
+    <html lang={lang} className={inter.variable} suppressHydrationWarning>
       <head>
         <meta name="baidu-site-verification" content="codeva-kDRjETSiUu" />
-        <meta name="color-scheme" content="light dark" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const theme = localStorage.getItem('theme');
-                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark');
-                  document.documentElement.style.colorScheme = 'dark';
-                } else {
-                  document.documentElement.style.colorScheme = 'light';
-                }
-              } catch (e) {}
-            `,
-          }}
-        />
       </head>
       <body suppressHydrationWarning>
         <Providers>
@@ -114,6 +110,7 @@ export default async function PortalLayout({
           <SplanFooter />
           <BackToTop />
           <SubscriptionNotification />
+          <ContactFormFloat />
         </Providers>
       </body>
     </html>

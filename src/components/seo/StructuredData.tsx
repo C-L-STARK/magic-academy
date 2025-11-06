@@ -1,14 +1,23 @@
+"use client";
+
 import Script from 'next/script'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { siteConfig } from '@/config/site'
 
 export default function StructuredData() {
+  const { language } = useLanguage()
+  const isZh = language === 'zh'
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    "name": "FX Killer",
-    "alternateName": "FX Killer",
-    "url": "https://fxkiller.com",
-    "logo": "https://fxkiller.com/logo.png",
-    "description": "专注于外汇交易的职业交易员培训平台，提供系统化外汇交易培训、实战训练和资金支持。",
+    "name": isZh ? "魔道院" : "Magic Academy",
+    "alternateName": isZh ? "Magic Academy" : "魔道院",
+    "url": "https://magic-academy.com",
+    "logo": "https://magic-academy.com/logo.png",
+    "description": isZh
+      ? "魔道院致力于培养数字时代的自由职业者，提供职业交易培训和个人品牌孵化两大核心业务。"
+      : "Magic Academy cultivates digital nomads with two core services: Professional Trading Training and Personal Brand Incubation.",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "CN"
@@ -16,61 +25,108 @@ export default function StructuredData() {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "x.stark.dylan@gmail.com"
+      "email": siteConfig.contact.email
     },
-    "offers": {
-      "@type": "Offer",
-      "name": "外汇交易员培训",
-      "description": "30个工作日系统化外汇交易培训，通过考核后获得资金支持",
-      "category": "外汇交易员培训"
-    }
+    "sameAs": [
+      siteConfig.social.twitter,
+      siteConfig.social.youtube,
+      siteConfig.social.bilibili,
+      siteConfig.social.github
+    ]
   }
 
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "外汇交易员培训计划",
-    "description": "30个工作日系统化培养外汇交易员，包括规则学习、盈利练习、小额实盘、大额矩阵四个阶段",
+    "name": isZh ? "职业交易培训计划" : "Professional Trading Training Program",
+    "description": isZh
+      ? "30天系统化交易培训，包括规则学习、实战训练、资金支持等阶段，帮助学员成为职业交易员。"
+      : "30-day systematic trading training including rule learning, practical training, and funding support to help students become professional traders.",
     "provider": {
       "@type": "Organization",
-      "name": "FX Killer",
-      "url": "https://fxkiller.com"
+      "name": isZh ? "魔道院" : "Magic Academy",
+      "url": "https://magic-academy.com"
     },
-    "educationalLevel": "专业级",
+    "educationalLevel": isZh ? "专业级" : "Professional",
     "timeRequired": "P30D",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "156"
+      "ratingValue": "4.9",
+      "ratingCount": "1000"
+    }
+  }
+
+  const brandingCourseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": isZh ? "个人品牌孵化计划" : "Personal Brand Incubation Program",
+    "description": isZh
+      ? "全方位个人品牌孵化培训，从内容创作到商业变现，帮助学员打造数字影响力。"
+      : "Comprehensive personal brand incubation training, from content creation to monetization, helping students build digital influence.",
+    "provider": {
+      "@type": "Organization",
+      "name": isZh ? "魔道院" : "Magic Academy",
+      "url": "https://magic-academy.com"
+    },
+    "educationalLevel": isZh ? "专业级" : "Professional",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "800"
     }
   }
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
+    "mainEntity": isZh ? [
       {
         "@type": "Question",
-        "name": "什么是 FX Killer 外汇交易员培训？",
+        "name": "什么是魔道院？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "我们是一个专注于外汇交易的职业交易员培训平台。我们致力于用专业的方法筛选和培养真正适合外汇市场的交易人才。我们将在30个工作日内判断新人是否是做外汇交易的可塑之才。"
+          "text": "魔道院是一个致力于培养数字时代自由职业者的教育平台。我们提供职业交易培训和个人品牌孵化两大核心业务，帮助学员实现财务自由和时间自由。"
         }
       },
       {
         "@type": "Question",
-        "name": "培训是免费的吗？",
+        "name": "魔道院提供哪些培训项目？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "是的，培训过程不收取学费。但你需要付出的是时间和精力。"
+          "text": "我们提供两大核心培训项目：1. 职业交易培训 - 30天系统化培训，帮助学员成为专业交易员并获得资金支持；2. 个人品牌孵化 - 全方位培训，从内容创作到商业变现，打造个人数字影响力。"
         }
       },
       {
         "@type": "Question",
-        "name": "通过考核后可以获得什么？",
+        "name": "魔道院的成功率如何？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "通过考核后，我们会为你分配资金：小额实盘20美金仓位配资100美金，大额实盘根据小额实盘表现设定。分润比例60%-90%，随能力提升而提高。"
+          "text": "我们拥有1000+学员成功案例，85%的达标率。学员平均在30-90天内实现变现，月收入从2万到10万+不等。"
+        }
+      }
+    ] : [
+      {
+        "@type": "Question",
+        "name": "What is Magic Academy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Magic Academy is an educational platform dedicated to cultivating digital nomads. We offer two core services: Professional Trading Training and Personal Brand Incubation, helping students achieve financial and time freedom."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What training programs does Magic Academy offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer two core training programs: 1. Professional Trading Training - 30-day systematic program to become a professional trader with funding support; 2. Personal Brand Incubation - Comprehensive training from content creation to monetization for building digital influence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Magic Academy's success rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We have 1000+ success stories with an 85% achievement rate. Students typically achieve monetization within 30-90 days, with monthly income ranging from $3k to $14k+."
         }
       }
     ]
@@ -90,6 +146,13 @@ export default function StructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(courseSchema)
+        }}
+      />
+      <Script
+        id="branding-course-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(brandingCourseSchema)
         }}
       />
       <Script

@@ -445,8 +445,8 @@ const translations: Record<Language, Record<string, string>> = {
     'login.back': '返回首页',
 
     // Subscription Notification
-    'notification.message1': '已联系团队长参加外汇交易员培训',
-    'notification.message2': '已成为试用会员',
+    'notification.message1': '参加职业交易员培训',
+    'notification.message2': '参加个人品牌孵化',
     'notification.time': '刚刚',
 
     // 不适合人群 & 候选人期望 & 考察重点
@@ -924,8 +924,8 @@ const translations: Record<Language, Record<string, string>> = {
     'login.back': 'Back to Home',
 
     // Subscription Notification
-    'notification.message1': 'Contacted team leader to join forex trader training',
-    'notification.message2': 'Became a trial member',
+    'notification.message1': 'Joined Professional Trading Training',
+    'notification.message2': 'Joined Personal Brand Incubation',
     'notification.time': 'Just now',
 
     // Unsuitable Candidates & Expectations & Assessment
