@@ -21,7 +21,7 @@ export default function TradingTrainingPage() {
       {/* Hero Section - Orange Theme */}
       <div className="relative min-h-screen flex items-center overflow-hidden -mt-16 pt-16"
         style={{
-          background: 'linear-gradient(135deg, #F4F1EC 0%, #F98513 50%, #FFAE5D 100%)',
+          background: 'linear-gradient(135deg, #F4F1EC 0%, #9BACD8 50%, #FFAE5D 100%)',
         }}>
 
         {/* Animated Background Elements */}
@@ -90,7 +90,7 @@ export default function TradingTrainingPage() {
                 <h1 className="text-5xl lg:text-7xl font-black leading-tight text-gray-900">
                   {isZh ? '30天成就' : 'Become A'}
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
                     {isZh ? '职业交易员' : 'Pro Trader'}
                   </span>
                 </h1>
@@ -104,7 +104,7 @@ export default function TradingTrainingPage() {
                 {/* Quick Stats */}
                 <div className="flex flex-wrap gap-4">
                   <div className="bg-white/90 backdrop-blur-xl px-6 py-3 border-2 border-orange-200 shadow-lg">
-                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
+                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
                       30{isZh ? '天' : 'D'}
                     </div>
                     <div className="text-xs text-gray-600 font-bold uppercase">
@@ -112,7 +112,7 @@ export default function TradingTrainingPage() {
                     </div>
                   </div>
                   <div className="bg-white/90 backdrop-blur-xl px-6 py-3 border-2 border-orange-200 shadow-lg">
-                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
+                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
                       60-90%
                     </div>
                     <div className="text-xs text-gray-600 font-bold uppercase">
@@ -120,7 +120,7 @@ export default function TradingTrainingPage() {
                     </div>
                   </div>
                   <div className="bg-white/90 backdrop-blur-xl px-6 py-3 border-2 border-orange-200 shadow-lg">
-                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
+                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
                       10-15%
                     </div>
                     <div className="text-xs text-gray-600 font-bold uppercase">
@@ -133,7 +133,7 @@ export default function TradingTrainingPage() {
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <button
                     onClick={handleApply}
-                    className="group px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden"
+                    className="group px-10 py-5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {isZh ? '立即申请' : 'Apply Now'}
@@ -141,7 +141,7 @@ export default function TradingTrainingPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
                   </button>
 
                   <LocaleLink
@@ -180,7 +180,7 @@ export default function TradingTrainingPage() {
                       {[65, 82, 75, 90, 78, 95, 88, 92, 85, 98, 92, 100].map((height, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex-1 bg-gradient-to-t from-orange-500 to-orange-400 rounded-t-lg"
+                          className="flex-1 bg-gradient-to-t from-blue-500 to-blue-400 rounded-t-lg"
                           initial={{ height: 0 }}
                           animate={{ height: `${height}%` }}
                           transition={{ delay: idx * 0.1, duration: 0.6 }}
@@ -207,7 +207,7 @@ export default function TradingTrainingPage() {
 
                 {/* Floating Tags */}
                 <motion.div
-                  className="absolute -top-6 right-12 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 shadow-xl font-bold"
+                  className="absolute -top-6 right-12 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 shadow-xl font-bold"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
@@ -220,7 +220,7 @@ export default function TradingTrainingPage() {
                   transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
                 >
                   <div className="text-sm text-gray-600">{isZh ? '月收入' : 'Monthly'}</div>
-                  <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
+                  <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
                     {isZh ? '¥30,000+' : '$4,200+'}
                   </div>
                 </motion.div>
@@ -234,7 +234,7 @@ export default function TradingTrainingPage() {
       <div className="relative py-24 bg-white overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #F98513 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 2px 2px, #9BACD8 1px, transparent 0)`,
             backgroundSize: '40px 40px'
           }}></div>
         </div>
@@ -378,7 +378,7 @@ export default function TradingTrainingPage() {
 
                   <div
                     className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-3xl"
-                    style={{ background: 'radial-gradient(circle, #F98513, transparent)' }}
+                    style={{ background: 'radial-gradient(circle, #9BACD8, transparent)' }}
                   ></div>
                 </div>
               </motion.div>
@@ -411,7 +411,7 @@ export default function TradingTrainingPage() {
           >
             <div className="inline-flex items-center gap-3 mb-6">
               <div className="h-px w-16 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
-              <span className="text-sm font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 uppercase">
+              <span className="text-sm font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600 uppercase">
                 {isZh ? '培训路径' : 'Training Path'}
               </span>
               <div className="h-px w-16 bg-gradient-to-l from-transparent via-orange-400 to-transparent"></div>
@@ -441,7 +441,7 @@ export default function TradingTrainingPage() {
                   isZh ? '能够独立识别进场信号' : 'Independently identify entry signals',
                 ],
                 warning: isZh ? '5个工作日内未通过规则考核将被劝退' : 'Failure to pass within 5 days results in dismissal',
-                color: '#F98513',
+                color: '#9BACD8',
               },
               {
                 phase: '02',
@@ -456,7 +456,7 @@ export default function TradingTrainingPage() {
                   isZh ? '第三周：务必做到操作一致性' : 'Week 3: Achieve operational consistency',
                 ],
                 warning: null,
-                color: '#F98513',
+                color: '#9BACD8',
               },
               {
                 phase: '03',
@@ -471,7 +471,7 @@ export default function TradingTrainingPage() {
                   isZh ? '保持操作一致性' : 'Maintain operational consistency',
                 ],
                 warning: isZh ? '30个工作日内未完成连续10天盈利，劝退处理' : 'Failure to complete 10 consecutive days within 30 working days results in dismissal',
-                color: '#F98513',
+                color: '#9BACD8',
               },
               {
                 phase: '04',
@@ -516,7 +516,7 @@ export default function TradingTrainingPage() {
                 <div
                   className={`relative bg-white p-10 border-2 transition-all duration-300 hover:shadow-2xl ${
                     idx === 4
-                      ? 'bg-gradient-to-br from-orange-500 to-orange-600 text-white border-orange-600'
+                      ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white border-blue-600'
                       : 'border-orange-200 hover:border-orange-400'
                   }`}
                 >
@@ -524,8 +524,8 @@ export default function TradingTrainingPage() {
                   <div
                     className={`absolute -left-6 -top-6 w-16 h-16 flex items-center justify-center text-3xl font-black shadow-xl ${
                       idx === 4
-                        ? 'bg-white text-orange-600 border-4 border-orange-600'
-                        : 'bg-gradient-to-br from-orange-500 to-orange-600 text-white border-4 border-white'
+                        ? 'bg-white text-orange-600 border-4 border-blue-600'
+                        : 'bg-gradient-to-br from-blue-500 to-blue-600 text-white border-4 border-white'
                     }`}
                   >
                     {stage.phase}
@@ -698,7 +698,7 @@ export default function TradingTrainingPage() {
               className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 hover:bg-white/10 transition-all"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
@@ -732,7 +732,7 @@ export default function TradingTrainingPage() {
               className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 hover:bg-white/10 transition-all"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -764,7 +764,7 @@ export default function TradingTrainingPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border-2 border-orange-500/50 p-8"
+            className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border-2 border-blue-500/50 p-8"
           >
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center flex-shrink-0">
@@ -927,7 +927,7 @@ export default function TradingTrainingPage() {
               className="group relative bg-white p-10 border-2 border-orange-200 hover:border-orange-400 transition-all hover:shadow-2xl"
             >
               <div className="text-6xl mb-6">📈</div>
-              <div className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-bold mb-4">
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-bold mb-4">
                 {isZh ? '豆瓣评分 8.7' : 'Rating 8.7'}
               </div>
               <h3 className="text-3xl font-black text-gray-900 mb-4">
@@ -947,7 +947,7 @@ export default function TradingTrainingPage() {
 
               <div
                 className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity blur-xl"
-                style={{ background: 'linear-gradient(135deg, #F98513, transparent)' }}
+                style={{ background: 'linear-gradient(135deg, #9BACD8, transparent)' }}
               />
             </motion.a>
 
@@ -962,7 +962,7 @@ export default function TradingTrainingPage() {
               className="group relative bg-white p-10 border-2 border-orange-200 hover:border-orange-400 transition-all hover:shadow-2xl"
             >
               <div className="text-6xl mb-6">💰</div>
-              <div className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-bold mb-4">
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-bold mb-4">
                 {isZh ? '豆瓣评分 8.0' : 'Rating 8.0'}
               </div>
               <h3 className="text-3xl font-black text-gray-900 mb-4">
@@ -982,7 +982,7 @@ export default function TradingTrainingPage() {
 
               <div
                 className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity blur-xl"
-                style={{ background: 'linear-gradient(135deg, #F98513, transparent)' }}
+                style={{ background: 'linear-gradient(135deg, #9BACD8, transparent)' }}
               />
             </motion.a>
           </div>
@@ -1408,7 +1408,7 @@ export default function TradingTrainingPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button
                 onClick={handleApply}
-                className="group px-12 py-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/50 hover:-translate-y-2 relative overflow-hidden"
+                className="group px-12 py-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-2 relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {isZh ? '立即预约面试' : 'Schedule Interview'}
@@ -1417,7 +1417,7 @@ export default function TradingTrainingPage() {
                   </svg>
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}

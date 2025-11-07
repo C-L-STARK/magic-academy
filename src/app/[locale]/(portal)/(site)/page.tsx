@@ -165,8 +165,8 @@ export default function HomePage() {
       content: isZh
         ? '30天通过考核，现在每月稳定收益3万+，完全实现了时间和财务自由。感谢魔道院的系统化培训，让我从零基础小白成长为专业交易员。'
         : 'Passed evaluation in 30 days, now earning $4k+ monthly with complete time and financial freedom. Thanks to systematic training from Magic Academy.',
-      color: '#F98513',
-      gradient: 'from-orange-500 to-orange-600',
+      color: '#9BACD8',
+      gradient: 'from-blue-500 to-blue-600',
       income: isZh ? '月收入 3万+' : 'Monthly $4k+',
     },
     {
@@ -175,8 +175,8 @@ export default function HomePage() {
       content: isZh
         ? '从0到1搭建了自己的在线课程平台，3个月学员破千，月收入10万+。这是我人生的转折点，终于实现了知识变现的梦想。'
         : 'Built online course platform from scratch, 1000+ students in 3 months, earning $14k+ monthly. A true turning point in my life.',
-      color: '#9BACD8',
-      gradient: 'from-blue-500 to-blue-600',
+      color: '#F98513',
+      gradient: 'from-orange-500 to-orange-600',
       income: isZh ? '月收入 10万+' : 'Monthly $14k+',
     },
     {
@@ -185,8 +185,8 @@ export default function HomePage() {
       content: isZh
         ? '全平台运营半年，粉丝50万+，品牌合作接到手软。现在是真正的数字游民，边旅行边工作，生活质量提升了十倍！'
         : '500k+ followers in 6 months, endless brand deals. True digital nomad life - working while traveling, 10x better quality of life!',
-      color: '#9BACD8',
-      gradient: 'from-blue-500 to-blue-600',
+      color: '#F98513',
+      gradient: 'from-orange-500 to-orange-600',
       income: isZh ? '月收入 8万+' : 'Monthly $11k+',
     },
     {
@@ -195,8 +195,8 @@ export default function HomePage() {
       content: isZh
         ? '在家带娃的同时实现了财务独立，每天2小时交易时间，月收入稳定在2万以上。魔道院让我找到了事业和家庭的完美平衡。'
         : 'Achieved financial independence while raising kids at home. 2 hours daily trading, earning $3k+ monthly. Perfect work-life balance.',
-      color: '#F98513',
-      gradient: 'from-orange-500 to-orange-600',
+      color: '#9BACD8',
+      gradient: 'from-blue-500 to-blue-600',
       income: isZh ? '月收入 2万+' : 'Monthly $3k+',
     },
     {
@@ -205,8 +205,8 @@ export default function HomePage() {
       content: isZh
         ? '从传统销售转型到线上品牌运营，6个月打造了20万粉丝矩阵，现在每月躺赚5万+。感恩魔道院教会我系统化的品牌孵化方法。'
         : 'Transitioned from traditional sales to online branding, built 200k follower matrix in 6 months, passive income $7k+ monthly.',
-      color: '#9BACD8',
-      gradient: 'from-blue-500 to-blue-600',
+      color: '#F98513',
+      gradient: 'from-orange-500 to-orange-600',
       income: isZh ? '月收入 5万+' : 'Monthly $7k+',
     },
   ];
@@ -342,7 +342,7 @@ export default function HomePage() {
                 >
                   <button
                     onClick={() => router.push(`/${language}/training/forex`)}
-                    className="group relative px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                    className="group relative px-10 py-5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {siteConfig.divisions.trading.name[language]}
@@ -350,12 +350,12 @@ export default function HomePage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
                   </button>
 
                   <button
                     onClick={() => router.push(`/${language}/training/social-media`)}
-                    className="group relative px-10 py-5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                    className="group relative px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {siteConfig.divisions.creator.name[language]}
@@ -363,7 +363,7 @@ export default function HomePage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
                   </button>
                 </motion.div>
 
@@ -1712,7 +1712,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <button
                 onClick={() => router.push(`/${language}/training/forex`)}
-                className="group px-12 py-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/50 hover:-translate-y-2 relative overflow-hidden"
+                className="group px-12 py-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-2 relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {isZh ? '职业交易培训' : 'Trading Course'}
@@ -1721,7 +1721,7 @@ export default function HomePage() {
                   </svg>
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
@@ -1730,7 +1730,7 @@ export default function HomePage() {
 
               <button
                 onClick={() => router.push(`/${language}/training/social-media`)}
-                className="group px-12 py-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-2 relative overflow-hidden"
+                className="group px-12 py-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/50 hover:-translate-y-2 relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {isZh ? '个人品牌孵化' : 'Brand Incubation'}
@@ -1739,7 +1739,7 @@ export default function HomePage() {
                   </svg>
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"
+                  className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}

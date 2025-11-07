@@ -21,7 +21,7 @@ export default function PersonalBrandPage() {
       {/* Hero Section - Blue Theme */}
       <div className="relative min-h-screen flex items-center overflow-hidden -mt-16 pt-16"
         style={{
-          background: 'linear-gradient(135deg, #F4F1EC 0%, #9BACD8 50%, #B8C9E8 100%)',
+          background: 'linear-gradient(135deg, #F4F1EC 0%, #F98513 50%, #B8C9E8 100%)',
         }}>
 
         {/* Animated Background Elements */}
@@ -90,7 +90,7 @@ export default function PersonalBrandPage() {
                 <h1 className="text-5xl lg:text-7xl font-black leading-tight text-gray-900">
                   {isZh ? '打造你的' : 'Build Your'}
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
                     {isZh ? '个人品牌' : 'Personal Brand'}
                   </span>
                 </h1>
@@ -104,7 +104,7 @@ export default function PersonalBrandPage() {
                 {/* Quick Stats */}
                 <div className="flex flex-wrap gap-4">
                   <div className="bg-white/90 backdrop-blur-xl px-6 py-3 border-2 border-blue-200 shadow-lg">
-                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
+                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
                       12{isZh ? '周' : 'W'}
                     </div>
                     <div className="text-xs text-gray-600 font-bold uppercase">
@@ -112,7 +112,7 @@ export default function PersonalBrandPage() {
                     </div>
                   </div>
                   <div className="bg-white/90 backdrop-blur-xl px-6 py-3 border-2 border-blue-200 shadow-lg">
-                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
+                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
                       8+
                     </div>
                     <div className="text-xs text-gray-600 font-bold uppercase">
@@ -120,7 +120,7 @@ export default function PersonalBrandPage() {
                     </div>
                   </div>
                   <div className="bg-white/90 backdrop-blur-xl px-6 py-3 border-2 border-blue-200 shadow-lg">
-                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
+                    <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
                       100k+
                     </div>
                     <div className="text-xs text-gray-600 font-bold uppercase">
@@ -133,7 +133,7 @@ export default function PersonalBrandPage() {
                 <div className="flex pt-4">
                   <button
                     onClick={handleApply}
-                    className="group px-10 py-5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden"
+                    className="group px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {isZh ? '立即咨询' : 'Inquire Now'}
@@ -141,7 +141,7 @@ export default function PersonalBrandPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
                   </button>
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function PersonalBrandPage() {
                         { name: 'YouTube', icon: '▶️', color: 'from-red-600 to-red-700' },
                         { name: 'Instagram', icon: '📷', color: 'from-purple-500 to-pink-500' },
                         { name: isZh ? '微博' : 'Weibo', icon: '🐦', color: 'from-red-500 to-orange-500' },
-                        { name: isZh ? '知乎' : 'Zhihu', icon: '💡', color: 'from-blue-600 to-blue-700' },
+                        { name: isZh ? '知乎' : 'Zhihu', icon: '💡', color: 'from-orange-600 to-orange-700' },
                         { name: 'TikTok', icon: '🎵', color: 'from-gray-900 to-black' },
                       ].map((platform, idx) => (
                         <motion.div
@@ -210,7 +210,7 @@ export default function PersonalBrandPage() {
 
                 {/* Floating Tags */}
                 <motion.div
-                  className="absolute -top-6 left-12 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 shadow-xl font-bold"
+                  className="absolute -top-6 left-12 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 shadow-xl font-bold"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
@@ -223,7 +223,7 @@ export default function PersonalBrandPage() {
                   transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
                 >
                   <div className="text-sm text-gray-600">{isZh ? '月收入' : 'Monthly'}</div>
-                  <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
+                  <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
                     {isZh ? '¥80,000+' : '$11,200+'}
                   </div>
                 </motion.div>
@@ -237,7 +237,7 @@ export default function PersonalBrandPage() {
       <div className="relative py-24 bg-white overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #9BACD8 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 2px 2px, #F98513 1px, transparent 0)`,
             backgroundSize: '40px 40px'
           }}></div>
         </div>
@@ -381,7 +381,7 @@ export default function PersonalBrandPage() {
 
                   <div
                     className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-3xl"
-                    style={{ background: 'radial-gradient(circle, #9BACD8, transparent)' }}
+                    style={{ background: 'radial-gradient(circle, #F98513, transparent)' }}
                   ></div>
                 </div>
               </motion.div>
@@ -414,7 +414,7 @@ export default function PersonalBrandPage() {
           >
             <div className="inline-flex items-center gap-3 mb-6">
               <div className="h-px w-16 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-              <span className="text-sm font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600 uppercase">
+              <span className="text-sm font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 uppercase">
                 {isZh ? '培训路径' : 'Training Path'}
               </span>
               <div className="h-px w-16 bg-gradient-to-l from-transparent via-blue-400 to-transparent"></div>
@@ -444,7 +444,7 @@ export default function PersonalBrandPage() {
                   isZh ? '内容方向规划与选择' : 'Content direction planning',
                   isZh ? '竞品研究与差异化定位' : 'Competitor research & differentiation',
                 ],
-                color: '#9BACD8',
+                color: '#F98513',
               },
               {
                 phase: '02',
@@ -459,7 +459,7 @@ export default function PersonalBrandPage() {
                   isZh ? '图文设计与排版技巧' : 'Visual design & layout skills',
                   isZh ? 'AI工具深度应用（ChatGPT/Midjourney）' : 'Deep AI tool application (ChatGPT/Midjourney)',
                 ],
-                color: '#9BACD8',
+                color: '#F98513',
               },
               {
                 phase: '03',
@@ -503,7 +503,7 @@ export default function PersonalBrandPage() {
                 <div className="relative bg-white p-10 border-2 border-blue-200 hover:border-blue-400 transition-all duration-300 hover:shadow-2xl">
                   {/* Phase Badge */}
                   <div
-                    className="absolute -left-6 -top-6 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white border-4 border-white flex items-center justify-center text-3xl font-black shadow-xl"
+                    className="absolute -left-6 -top-6 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 text-white border-4 border-white flex items-center justify-center text-3xl font-black shadow-xl"
                   >
                     {stage.phase}
                   </div>
@@ -631,7 +631,7 @@ export default function PersonalBrandPage() {
               >
                 <div className="bg-white p-8 border-2 border-blue-200 hover:border-blue-400 transition-all h-full">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-2xl font-black text-white shadow-lg">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-2xl font-black text-white shadow-lg">
                       {story.name[0]}
                     </div>
                     <div>
@@ -661,7 +661,7 @@ export default function PersonalBrandPage() {
 
                   <div
                     className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity blur-xl"
-                    style={{ background: 'linear-gradient(135deg, #9BACD8, transparent)' }}
+                    style={{ background: 'linear-gradient(135deg, #F98513, transparent)' }}
                   />
                 </div>
               </motion.div>
@@ -707,7 +707,7 @@ export default function PersonalBrandPage() {
                   { name: isZh ? '剪映/CapCut剪辑' : 'Jianying/CapCut', desc: isZh ? '视频剪辑教程' : 'Video editing tutorials' },
                   { name: isZh ? 'Canva设计模板' : 'Canva Templates', desc: isZh ? '图文设计工具' : 'Visual design tool' },
                 ],
-                color: '#9BACD8',
+                color: '#F98513',
               },
               {
                 category: isZh ? '数据分析工具' : 'Analytics Tools',
@@ -1135,7 +1135,7 @@ export default function PersonalBrandPage() {
             <div className="flex justify-center">
               <button
                 onClick={handleApply}
-                className="group px-12 py-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-2 relative overflow-hidden"
+                className="group px-12 py-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/50 hover:-translate-y-2 relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {isZh ? '立即咨询' : 'Inquire Now'}
@@ -1144,7 +1144,7 @@ export default function PersonalBrandPage() {
                   </svg>
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"
+                  className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
