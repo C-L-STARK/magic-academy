@@ -8,6 +8,7 @@ import { useMode } from '@/contexts/ModeContext';
 import { siteConfig } from '@/config/site';
 import LocaleLink from '@/components/navigation/LocaleLink';
 import EmailContactModal from '@/components/custom/EmailContactModal';
+import MagicPhilosophy from '@/components/custom/MagicPhilosophy';
 import Image from 'next/image';
 
 // Typewriter Component for Title - WITH LOOP
@@ -144,17 +145,17 @@ export default function HomePage() {
 
   // Rotating descriptions
   const rotatingTexts = isZh ? [
-    '职业交易培训：30天速成，实现财务自由',
-    '个人品牌孵化：打造影响力，月入10万+',
-    '系统化培养体系，终身学习社群支持',
-    '1000+学员成功案例，85%达标率',
-    '全程导师指导，快速变现落地'
+    '自律即自由：战胜懒惰、贪婪、恐惧、犹豫、傲慢',
+    '职业交易培训：留下极少数，劝返大多数，你材必有他用',
+    '个人品牌孵化：注重自我成长，构建属于自己的品牌',
+    '这里既是修道场，也是桃花源',
+    '无员工，只有战友、合作伙伴，你就是老板'
   ] : [
-    'Professional Trading: 30-day fast track to financial freedom',
-    'Personal Branding: Build influence, earn $14k+ monthly',
-    'Systematic training with lifetime community support',
-    '1000+ success stories with 85% achievement rate',
-    'Full mentorship for quick monetization'
+    'Discipline Brings Freedom: Overcome inner demons',
+    'Trading: Keep the Few, Return the Many',
+    'Branding: Focus on Growth, Build Your Brand',
+    'Both Training Ground and Utopia',
+    'No Employees, Only Comrades - You Are The Boss'
   ];
 
   // Testimonials data - expanded
@@ -316,10 +317,10 @@ export default function HomePage() {
                 {/* Main Heading with Typewriter */}
                 <h1 className="text-5xl lg:text-7xl font-black leading-tight min-h-[160px] lg:min-h-[200px]">
                   <span className="block text-gray-900">
-                    <TypewriterTitle text={isZh ? "打造数字时代的" : "Master Your"} delay={300} />
+                    <TypewriterTitle text={isZh ? "入魔道 · 修心修身" : "Enter Magic Path"} delay={300} />
                   </span>
                   <span className="block text-gray-900 mt-2">
-                    <TypewriterTitle text={isZh ? "自由职业者" : "Future"} delay={isZh ? 2000 : 1500} />
+                    <TypewriterTitle text={isZh ? "成真正数字游民" : "Become Free" } delay={isZh ? 2000 : 1500} />
                   </span>
                 </h1>
 
@@ -820,6 +821,9 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      {/* Magic Philosophy Section */}
+      <MagicPhilosophy />
 
       {/* Two Divisions Section - ELEGANT REDESIGN */}
       <div className="relative py-32 overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
