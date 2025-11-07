@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, useInView } from 'motion/react';
 import EmailContactModal from '@/components/custom/EmailContactModal';
+import TradingCareerStory from '@/components/custom/TradingCareerStory';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LocaleLink from '@/components/navigation/LocaleLink';
 import Image from 'next/image';
@@ -229,6 +230,9 @@ export default function TradingTrainingPage() {
           </div>
         </div>
       </div>
+
+      {/* Trading Career Story Section */}
+      <TradingCareerStory />
 
       {/* Why Choose Us Section */}
       <div className="relative py-24 bg-white overflow-hidden">
