@@ -12,7 +12,6 @@ import LocaleLink from '@/components/navigation/LocaleLink';
 export default function UnifiedNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const { language, toggleLanguage, t } = useLanguage();
   const { mode, theme } = useMode();
@@ -85,8 +84,6 @@ export default function UnifiedNavbar() {
               <div
                 key={index}
                 className="relative"
-                onMouseEnter={() => item.hasDropdown && setOpenDropdown(item.name)}
-                onMouseLeave={() => item.hasDropdown && setOpenDropdown(null)}
               >
                 <LocaleLink
                   href={item.link}
@@ -102,24 +99,7 @@ export default function UnifiedNavbar() {
                   >
                     {item.name}
                   </span>
-                  {item.hasDropdown && (
-                    <svg
-                      className={`w-4 h-4 transition-transform ${
-                        openDropdown === item.name ? 'rotate-180' : ''
-                      } ${
-                        isActive(item.link)
-                          ? ''
-                          : 'text-gray-600'
-                      }`}
-                      style={isActive(item.link) ? { color: theme.primary } : {}}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  )}
-                  {isActive(item.link) && !item.hasDropdown && (
+                  {isActive(item.link) && (
                     <motion.div
                       layoutId="navbar-indicator"
                       className="absolute bottom-0 left-0 right-0 h-0.5"
@@ -128,31 +108,6 @@ export default function UnifiedNavbar() {
                     />
                   )}
                 </LocaleLink>
-
-                {/* Dropdown Menu */}
-                {item.hasDropdown && item.dropdownItems && (
-                  <AnimatePresence>
-                    {openDropdown === item.name && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 shadow-lg z-50"
-                      >
-                        {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
-                          <LocaleLink
-                            key={dropdownIndex}
-                            href={dropdownItem.link}
-                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors border-b border-gray-100 last:border-b-0"
-                          >
-                            {dropdownItem.name}
-                          </LocaleLink>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                )}
               </div>
             ))}
           </div>
@@ -225,58 +180,18 @@ export default function UnifiedNavbar() {
           >
             <div className="px-4 py-4 space-y-2">
               {navItems.map((item, index) => (
-                <div key={index}>
-                  {item.hasDropdown ? (
-                    <div>
-                      <button
-                        onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
-                        className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium transition-colors ${
-                          isActive(item.link)
-                            ? 'bg-gray-100 font-bold'
-                            : 'text-gray-700 hover:bg-gray-100'
-                        }`}
-                        style={isActive(item.link) ? { color: theme.primary } : {}}
-                      >
-                        <span>{item.name}</span>
-                        <svg
-                          className={`w-4 h-4 transition-transform ${
-                            openDropdown === item.name ? 'rotate-180' : ''
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                      {openDropdown === item.name && item.dropdownItems && (
-                        <div className="pl-4 mt-1 space-y-1">
-                          {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
-                            <LocaleLink
-                              key={dropdownIndex}
-                              href={dropdownItem.link}
-                              className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-black transition-colors"
-                            >
-                              {dropdownItem.name}
-                            </LocaleLink>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <LocaleLink
-                      href={item.link}
-                      className={`block px-4 py-3 text-sm font-medium transition-colors ${
-                        isActive(item.link)
-                          ? 'bg-gray-100 font-bold'
-                          : 'text-gray-700 hover:bg-gray-100'
-                      }`}
-                      style={isActive(item.link) ? { color: theme.primary } : {}}
-                    >
-                      {item.name}
-                    </LocaleLink>
-                  )}
-                </div>
+                <LocaleLink
+                  key={index}
+                  href={item.link}
+                  className={`block px-4 py-3 text-sm font-medium transition-colors ${
+                    isActive(item.link)
+                      ? 'bg-gray-100 font-bold'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                  style={isActive(item.link) ? { color: theme.primary } : {}}
+                >
+                  {item.name}
+                </LocaleLink>
               ))}
 
               {/* Mobile Language Toggle */}
