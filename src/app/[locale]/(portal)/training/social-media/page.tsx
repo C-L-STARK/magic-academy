@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { siteConfig } from '@/config/site';
 import EmailContactModal from '@/components/custom/EmailContactModal';
+import BrandingStory from '@/components/custom/BrandingStory';
 import LocaleLink from '@/components/navigation/LocaleLink';
 
 export default function PersonalBrandPage() {
@@ -232,6 +233,9 @@ export default function PersonalBrandPage() {
           </div>
         </div>
       </div>
+
+      {/* Personal Branding Story Section */}
+      <BrandingStory />
 
       {/* Why Choose Us Section */}
       <div className="relative py-24 bg-white overflow-hidden">
