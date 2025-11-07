@@ -52,8 +52,8 @@ export const siteConfig = {
         zh: '从0到1成为专业交易员，掌握系统化交易策略，获得资金支持，实现财务自由',
         en: 'Become a professional trader from scratch, master systematic trading strategies, get funding support, and achieve financial freedom',
       },
-      color: '#F98513', // Orange
-      gradient: 'linear-gradient(135deg, #F4F1EC 0%, #F98513 100%)',
+      color: '#9BACD8', // Flower Blue (对调后)
+      gradient: 'linear-gradient(135deg, #F4F1EC 0%, #9BACD8 100%)',
       path: '/training/forex',
       features: [
         { zh: '系统化课程体系', en: 'Systematic curriculum' },
@@ -71,8 +71,8 @@ export const siteConfig = {
         zh: '打造你的数字影响力，从内容创作到商业变现，全方位孵化个人品牌',
         en: 'Build your digital influence, from content creation to monetization, comprehensive personal brand incubation',
       },
-      color: '#9BACD8', // Flower Blue
-      gradient: 'linear-gradient(135deg, #F4F1EC 0%, #9BACD8 100%)',
+      color: '#F98513', // Orange (对调后)
+      gradient: 'linear-gradient(135deg, #F4F1EC 0%, #F98513 100%)',
       path: '/training/social-media',
       features: [
         { zh: '内容创作训练', en: 'Content creation training' },
