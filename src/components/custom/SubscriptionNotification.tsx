@@ -82,22 +82,44 @@ export default function SubscriptionNotification() {
           return (
             <motion.div
               key={notification.id}
-              initial={{ opacity: 0, y: 20, x: -30, scale: 0.95 }}
+              initial={{ opacity: 0, y: 50, x: -50, scale: 0.8, rotate: -10 }}
               animate={{
                 opacity: 1,
                 y: 0,
                 x: 0,
                 scale: 1,
+                rotate: [0, -2, 2, -1, 1, 0], // 倾斜晃动效果
               }}
-              exit={{ opacity: 0, y: 10, x: -30, scale: 0.95 }}
+              exit={{ opacity: 0, y: 20, x: -40, scale: 0.9, rotate: -5 }}
               transition={{
-                duration: 0.4,
-                ease: "easeOut"
+                duration: 0.6,
+                ease: [0.34, 1.56, 0.64, 1], // 弹性缓动
+                rotate: {
+                  duration: 0.8,
+                  ease: "easeInOut"
+                }
               }}
               className="mb-3 pointer-events-auto"
             >
-              <div className="bg-white border-l-4 shadow-xl hover:shadow-2xl transition-shadow duration-300 p-4 max-w-sm rounded-r-lg"
-                style={{ borderLeftColor: isTrading ? '#F98513' : '#9BACD8' }}>
+              <motion.div
+                className="bg-white border-l-4 shadow-xl hover:shadow-2xl transition-shadow duration-300 p-4 max-w-sm rounded-r-lg"
+                style={{ borderLeftColor: isTrading ? '#F98513' : '#9BACD8' }}
+                whileHover={{
+                  scale: 1.05,
+                  rotate: 1,
+                  transition: { duration: 0.2 }
+                }}
+                animate={{
+                  y: [0, -5, 0], // 悬浮弹跳效果
+                }}
+                transition={{
+                  y: {
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }
+                }}
+              >
                 <div className="flex items-start gap-3">
                   {/* 图标 */}
                   <motion.div
@@ -151,18 +173,42 @@ export default function SubscriptionNotification() {
                   {/* Success checkmark */}
                   <motion.div
                     initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ delay: 0.35, type: "spring", stiffness: 200 }}
+                    animate={{
+                      scale: 1,
+                      rotate: [0, -10, 10, -5, 5, 0], // 晃动效果
+                    }}
+                    transition={{
+                      delay: 0.35,
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 10,
+                      rotate: {
+                        duration: 0.6,
+                        ease: "easeInOut"
+                      }
+                    }}
                     className="flex-shrink-0"
                   >
-                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                    <motion.div
+                      className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center"
+                      animate={{
+                        scale: [1, 1.2, 1], // 脉冲效果
+                      }}
+                      transition={{
+                        scale: {
+                          duration: 1.5,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
+                      }}
+                    >
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                    </div>
+                    </motion.div>
                   </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           );
         })}
