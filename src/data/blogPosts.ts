@@ -25,95 +25,94 @@ export const blogPosts: BlogPost[] = [
  // 1. 网站介绍 - 扩展版本
  {
  id: '1',
- slug: 'about-fx-killer',
+ slug: 'about-magic-academy',
  title: {
- zh: '关于汇刃 (FX Killer) - 军事化外汇交易员训练营',
- en: 'About FX Killer - Military-Style Forex Trader Training Camp'
+ zh: '关于魔道院 (Magic Academy) - 通过修行成为真正的数字游民',
+ en: 'About Magic Academy - Become a True Digital Nomad Through Cultivation'
  },
  excerpt: {
- zh: '汇刃 (FX Killer) 是一个专注于筛选和培养外汇交易员的训练营。我们的理念：培养真正适合的人，留下极少数，劝返大多数。通过率10%-15%，30个工作日完整培训，盈利分成60%-90%。',
- en: 'FX Killer is a training camp focused on selecting and cultivating forex traders. Our philosophy: cultivating those truly suited, retaining the few, advising the majority. Pass rate 10%-15%, 30 working days complete training, 60%-90% profit share.'
+ zh: '魔道院致力于为每一个渴望获取自由的行者，提供修行之道途。核心理念：自律即自由。通过战胜内心的懒惰、贪婪、恐惧、犹豫、傲慢，成为真正的数字游民。职业交易和个人品牌孵化两大修行路径。',
+ en: 'Magic Academy provides cultivation paths for those seeking freedom. Core philosophy: Discipline brings freedom. Overcome laziness, greed, fear, hesitation, and pride to become a true digital nomad. Two paths: Professional Trading and Personal Branding.'
  },
  content: {
- zh: `<h1 class="text-4xl font-bold text-center mb-8 text-black dark:text-white">关于汇刃 (FX Killer)</h1>
+ zh: `<h1 class="text-4xl font-bold text-center mb-8 text-black dark:text-white">关于魔道院 (Magic Academy)</h1>
 
-<p class="text-base leading-relaxed mb-8 text-center text-gray-700 dark:text-gray-300">汇刃是一个专注于筛选和培养顶尖外汇交易员的军事化训练营。我们不追求数量，只培养真正适合的人。这是一个严格、高强度、高淘汰率的专业训练项目。</p>
+<p class="text-base leading-relaxed mb-8 text-center text-gray-700 dark:text-gray-300">魔道院致力于为每一个渴望获取自由的行者，提供修行之道途。自由意味着不受束缚，没有边界限制。但世界上没有任何成果可以不劳而获。没有付出就想获得自由，无异于痴人说梦。自律才能自由，如果你想真正获得一份自由，必要战胜自己的懒惰、贪婪、恐惧、犹豫迟疑、骄傲自负。</p>
 
 <div class="bg-black dark:bg-white text-white dark:text-black p-8 mb-8 border-2 border-black dark:border-white">
-<p class="text-3xl font-bold mb-4 text-white dark:text-black text-center">培养真正适合的人，留下极少数，劝返大多数</p>
-<p class="text-lg text-center text-white dark:text-black">我们的使命不是让每个人都成为交易员，而是找到那些真正具有交易天赋和心理素质的人</p>
+<p class="text-3xl font-bold mb-4 text-white dark:text-black text-center">自律即自由 · 修心修身</p>
+<p class="text-lg text-center text-white dark:text-black">来此需先直面内心诸多"魔念"，故是魔道。入魔道先修心，修身。</p>
 </div>
 
-<h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">核心数据</h2>
+<h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">核心理念</h2>
 
-<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700"><div class="mb-4 w-12 h-12 bg-black dark:bg-white flex items-center justify-center"><span class="text-2xl text-white dark:text-black font-bold">30</span></div>
-<p class="text-xl font-bold mb-2 text-black dark:text-white">工作日</p>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">完整培训周期</p>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
+<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700"><div class="mb-4 text-center text-4xl">😴</div>
+<p class="text-xl font-bold mb-2 text-black dark:text-white text-center">懒惰</p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed text-center text-sm">拖延与懈怠</p>
 </div>
-<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700"><div class="mb-4 w-12 h-12 bg-black dark:bg-white flex items-center justify-center"><span class="text-2xl text-white dark:text-black font-bold">10</span></div>
-<p class="text-xl font-bold mb-2 text-black dark:text-white">通过率</p>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">10%-15%</p>
+<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700"><div class="mb-4 text-center text-4xl">🤑</div>
+<p class="text-xl font-bold mb-2 text-black dark:text-white text-center">贪婪</p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed text-center text-sm">过度欲望</p>
 </div>
-<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700"><div class="mb-4 w-12 h-12 bg-black dark:bg-white flex items-center justify-center"><span class="text-2xl text-white dark:text-black font-bold">90</span></div>
-<p class="text-xl font-bold mb-2 text-black dark:text-white">最高分润</p>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">60%-90%</p>
+<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700"><div class="mb-4 text-center text-4xl">😨</div>
+<p class="text-xl font-bold mb-2 text-black dark:text-white text-center">恐惧</p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed text-center text-sm">畏首畏尾</p>
 </div>
-<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700"><div class="mb-4 w-12 h-12 bg-black dark:bg-white flex items-center justify-center"><span class="text-2xl text-white dark:text-black font-bold">0</span></div>
-<p class="text-xl font-bold mb-2 text-black dark:text-white">培训费用</p>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed">完全免费</p>
+<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700"><div class="mb-4 text-center text-4xl">🤔</div>
+<p class="text-xl font-bold mb-2 text-black dark:text-white text-center">犹豫</p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed text-center text-sm">迟疑不决</p>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700"><div class="mb-4 text-center text-4xl">😤</div>
+<p class="text-xl font-bold mb-2 text-black dark:text-white text-center">傲慢</p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed text-center text-sm">骄傲自负</p>
 </div>
 </div>
 
-<h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">我们的培训理念</h2>
+<h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">两大修行路径</h2>
 
-<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">汇刃采用军事化管理模式，因为我们深知：交易是一场心理战争，需要极强的纪律性、执行力和心理素质。我们的培训不是教你如何快速致富，而是培养你成为一名专业的、可持续盈利的交易员。</p>
+<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">魔道院提供两条通往自由的修行路径，每条路径都有其独特的哲学和方法论。你需要找到最适合自己的道路。</p>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700">
-<div class="mb-4 w-12 h-12 bg-black dark:bg-white flex items-center justify-center">
-<span class="text-2xl text-white dark:text-black font-bold">1</span>
-</div>
-<p class="text-xl font-bold mb-3 text-black dark:text-white">严格筛选</p>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-2">不是所有人都适合做交易员。我们通过多维度评估，在培训前就筛选掉大部分不适合的人。</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 p-6 border-2 border-blue-200 dark:border-blue-700">
+<div class="mb-4 text-center text-4xl">❄️</div>
+<p class="text-2xl font-bold mb-3 text-black dark:text-white text-center">职业交易培训</p>
+<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-center font-bold">"留下极少数，劝返大多数。你材必有他用。"</p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-2">专注于筛选和培养真正适合的交易员。遵循"先赚钱，再学习；边赚钱，边学习"的原则。</p>
 <ul class="space-y-2 mt-4">
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>心理测评</span></li>
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>背景调查</span></li>
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>面谈沟通</span></li>
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>基础能力测试</span></li>
+<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-blue-600 dark:text-blue-400 font-bold">•</span><span>严格筛选机制（通过率10-15%）</span></li>
+<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-blue-600 dark:text-blue-400 font-bold">•</span><span>系统化交易培训</span></li>
+<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-blue-600 dark:text-blue-400 font-bold">•</span><span>实战盈利验证</span></li>
+<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-blue-600 dark:text-blue-400 font-bold">•</span><span>构建东方金融力量</span></li>
 </ul>
 </div>
 
-<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700">
-<div class="mb-4 w-12 h-12 bg-black dark:bg-white flex items-center justify-center">
-<span class="text-2xl text-white dark:text-black font-bold">2</span>
-</div>
-<p class="text-xl font-bold mb-3 text-black dark:text-white">系统培训</p>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-2">我们提供完整的交易系统，从规则学习到实战演练，每一步都有明确的标准和考核。</p>
+<div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900 dark:to-orange-800 p-6 border-2 border-orange-200 dark:border-orange-700">
+<div class="mb-4 text-center text-4xl">🔥</div>
+<p class="text-2xl font-bold mb-3 text-black dark:text-white text-center">个人品牌孵化</p>
+<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-center font-bold">"注重自我成长，构建属于自己的品牌"</p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-2">帮助你打造个人IP，实现多元化发展，成为真正的数字游民。</p>
 <ul class="space-y-2 mt-4">
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>15个标准进场点</span></li>
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>严格的止损规则</span></li>
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>资金管理体系</span></li>
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>情绪管理训练</span></li>
-</ul>
-</div>
-
-<div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700">
-<div class="mb-4 w-12 h-12 bg-black dark:bg-white flex items-center justify-center">
-<span class="text-2xl text-white dark:text-black font-bold">3</span>
-</div>
-<p class="text-xl font-bold mb-3 text-black dark:text-white">持续支持</p>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-2">通过考核后，你将成为团队的一员，获得持续的支持和资源，共同成长。</p>
-<ul class="space-y-2 mt-4">
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>每日复盘会议</span></li>
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>导师一对一指导</span></li>
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>团队知识共享</span></li>
-<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>配资额度提升</span></li>
+<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-orange-600 dark:text-orange-400 font-bold">•</span><span>六大职业路径（自媒体/IP/MCN/Web3/教育/元宇宙）</span></li>
+<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-orange-600 dark:text-orange-400 font-bold">•</span><span>内容创作与运营</span></li>
+<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-orange-600 dark:text-orange-400 font-bold">•</span><span>AI工具赋能</span></li>
+<li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2"><span class="text-orange-600 dark:text-orange-400 font-bold">•</span><span>品牌矩阵构建</span></li>
 </ul>
 </div>
 </div>
 
-<h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">30天筛选流程</h2>
+<h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">魔道院愿景</h2>
+
+<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300 text-center text-lg">这里既是修道场，也是桃花源。能决定你是否成为你希望的自己，只有你自己的心。无论你最终如何选择，你都将是自己的老板，这里没有员工，只有战友、合作伙伴。</p>
+
+<div class="bg-gradient-to-r from-purple-100 via-blue-100 to-orange-100 dark:from-purple-900 dark:via-blue-900 dark:to-orange-900 p-8 border-2 border-gray-300 dark:border-gray-700 mb-8">
+<p class="text-2xl font-bold mb-4 text-center text-black dark:text-white">🌟 加入魔道院，开启自由之旅</p>
+<p class="text-center text-gray-700 dark:text-gray-300 leading-relaxed">通过自律修行，战胜内心"魔念"，成为真正不受束缚的数字游民。</p>
+</div>
+
+<h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">职业交易培训详情</h2>
+
+<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">以下是职业交易培训路径的详细介绍。这是一条严格的修行道路，需要极强的自律和执行力。</p>
 
 <p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">整个培训过程分为四个阶段，每个阶段都有明确的目标和淘汰标准。这不是一个轻松的过程，但如果你能坚持下来并通过考核，你将获得成为职业交易员的资格。</p>
 
@@ -307,7 +306,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">收入体系</h2>
 
-<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">汇刃采用分润制度，你的收入完全取决于你的交易盈利。我们不收取任何培训费用，也不要求你投入自己的资金。公司提供配资，你只需专注于交易。</p>
+<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">魔道院采用分润制度，你的收入完全取决于你的交易盈利。我们不收取任何培训费用，也不要求你投入自己的资金。公司提供配资，你只需专注于交易。</p>
 
 <div class="bg-black dark:bg-white text-white dark:text-black p-8 mb-8 border-2 border-black dark:border-white">
 <p class="text-2xl font-bold mb-6 text-white dark:text-black text-center">分润比例：60% - 90%</p>
@@ -552,9 +551,9 @@ export const blogPosts: BlogPost[] = [
 <li class="text-white dark:text-black leading-relaxed flex items-start gap-2"><span class="font-bold">•</span><span>如有虚假信息，一经发现立即淘汰</span></li>
 </ul>
 </div>`,
- en: `<h1 class="text-4xl font-bold text-center mb-8 text-black dark:text-white">About FX Killer (FX Killer)</h1>
+ en: `<h1 class="text-4xl font-bold text-center mb-8 text-black dark:text-white">About Magic Academy (Magic Academy)</h1>
 
-<p class="text-base leading-relaxed mb-8 text-center text-gray-700 dark:text-gray-300">FX Killer is a military-style training camp focused on selecting and cultivating top forex traders. We don't pursue quantity, only cultivating those truly suited. This is a strict, high-intensity, high-elimination professional training program.</p>
+<p class="text-base leading-relaxed mb-8 text-center text-gray-700 dark:text-gray-300">Magic Academy is a military-style training camp focused on selecting and cultivating top forex traders. We don't pursue quantity, only cultivating those truly suited. This is a strict, high-intensity, high-elimination professional training program.</p>
 
 <div class="bg-black dark:bg-white text-white dark:text-black p-8 mb-8 border-2 border-black dark:border-white">
 <p class="text-3xl font-bold mb-4 text-white dark:text-black text-center">Cultivating those truly suited, retaining the few, advising the majority</p>
@@ -584,7 +583,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">Our Training Philosophy</h2>
 
-<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">FX Killer adopts a military-style management model because we know: trading is a psychological war requiring extreme discipline, execution, and mental strength. Our training isn't about teaching you how to get rich quick, but cultivating you to become a professional, sustainable trader.</p>
+<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">Magic Academy adopts a military-style management model because we know: trading is a psychological war requiring extreme discipline, execution, and mental strength. Our training isn't about teaching you how to get rich quick, but cultivating you to become a professional, sustainable trader.</p>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
 <div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700">
@@ -1014,7 +1013,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2 class="text-3xl font-bold text-center mb-4 text-black dark:text-white border-b-4 border-black dark:border-white inline-block pb-2 w-full">Final Thoughts</h2>
 
-<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">FX Killer is not just a training institution, but more like a highly disciplined military camp. We won't promise you quick riches or easy success. What we can provide is:</p>
+<p class="text-base leading-relaxed mb-6 text-gray-700 dark:text-gray-300">Magic Academy is not just a training institution, but more like a highly disciplined military camp. We won't promise you quick riches or easy success. What we can provide is:</p>
 
 <ul class="space-y-3 mb-8">
 <li class="text-gray-700 dark:text-gray-300 leading-relaxed flex items-start gap-2"><span class="text-black dark:text-white font-bold">•</span><span>A complete and battle-tested trading system</span></li>
@@ -1037,7 +1036,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'about',
  tags: ['introduction', 'platform', 'training'],
- author: 'FX Killer Team',
+ author: '魔道院团队',
  date: '2025-01-15',
  readTime: 20,
  featured: true
@@ -1745,7 +1744,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'forex',
  tags: ['beginner', 'forex', 'guide', 'education'],
- author: 'FX Killer Team',
+ author: '魔道院团队',
  date: '2025-01-16',
  readTime: 25,
  featured: true
@@ -2408,7 +2407,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'forex',
  tags: ['risk-management', 'forex', 'advanced'],
- author: 'FX Killer Team',
+ author: '魔道院团队',
  date: '2025-01-17',
  readTime: 20,
  featured: true
@@ -2777,7 +2776,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'gold',
  tags: ['gold', 'timing', 'strategy'],
- author: 'FX Killer Team',
+ author: '魔道院团队',
  date: '2025-01-18',
  readTime: 22,
  featured: false
@@ -2860,7 +2859,7 @@ export const blogPosts: BlogPost[] = [
 </div>
 
 <div class="bg-black dark:bg-white text-white dark:text-black p-8 mb-8 border-2 border-black dark:border-white">
-<p class="text-2xl font-bold mb-4 text-white dark:text-black text-center">💡 汇刃推荐：波段交易策略</p>
+<p class="text-2xl font-bold mb-4 text-white dark:text-black text-center">💡 魔道院推荐：波段交易策略</p>
 <p class="text-lg leading-relaxed text-center text-white dark:text-black">风险可控、时间灵活、盈利目标明确，最适合大多数交易员。</p>
 </div>
 
@@ -2919,7 +2918,7 @@ export const blogPosts: BlogPost[] = [
 <div class="space-y-6 mb-8">
 <div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700">
 <p class="text-xl font-bold mb-4 text-black dark:text-white">📈 案例：从$5,000到$50,000的12个月</p>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">某汇刃学员的真实交易记录（已脱敏）</p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">某魔道院学员的真实交易记录（已脱敏）</p>
 <div class="overflow-x-auto">
 <table class="w-full border-2 border-gray-300 dark:border-gray-700">
 <thead>
@@ -3028,7 +3027,7 @@ export const blogPosts: BlogPost[] = [
 </div>
 
 <div class="bg-black dark:bg-white text-white dark:text-black p-8 mb-8 border-2 border-black dark:border-white">
-<p class="text-2xl font-bold mb-4 text-white dark:text-black text-center">FX Killer Recommendation: Swing Trading Strategy</p>
+<p class="text-2xl font-bold mb-4 text-white dark:text-black text-center">Magic Academy Recommendation: Swing Trading Strategy</p>
 <p class="text-lg leading-relaxed text-center text-white dark:text-black">Controlled risk, flexible timing, clear profit targets—best suited for most traders.</p>
 </div>
 
@@ -3087,7 +3086,7 @@ export const blogPosts: BlogPost[] = [
 <div class="space-y-6 mb-8">
 <div class="bg-white dark:bg-gray-800 p-6 border-2 border-gray-200 dark:border-gray-700">
 <p class="text-xl font-bold mb-4 text-black dark:text-white">Case Study: From $5,000 to $50,000 in 12 Months</p>
-<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">Real trading record from an FX Killer student (anonymized)</p>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">Real trading record from an Magic Academy student (anonymized)</p>
 <div class="overflow-x-auto">
 <table class="w-full border-2 border-gray-300 dark:border-gray-700">
 <thead>
@@ -3135,7 +3134,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'gold',
  tags: ['gold', 'profit', 'strategy', 'advanced'],
- author: 'FX Killer Team',
+ author: '魔道院团队',
  date: '2025-01-19',
  readTime: 24,
  featured: false
@@ -4076,7 +4075,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'crypto',
  tags: ['cryptocurrency', 'beginner', 'blockchain'],
- author: 'FX Killer Team',
+ author: '魔道院团队',
  date: '2025-01-20',
  readTime: 25,
  featured: false
@@ -4269,7 +4268,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'crypto',
  tags: ['cryptocurrency', 'psychology', 'emotions'],
- author: 'FX Killer Team',
+ author: '魔道院团队',
  date: '2025-01-21',
  readTime: 22,
  featured: false
@@ -4766,7 +4765,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'psychology',
  tags: ['psychology', 'professional', 'development'],
- author: 'FX Killer Team',
+ author: '魔道院团队',
  date: '2025-01-22',
  readTime: 11,
  featured: false
@@ -5348,7 +5347,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'professional',
  tags: ['professional', 'routine', 'workflow', 'daily'],
- author: 'FX Killer Team',
+ author: '魔道院团队',
  date: '2025-01-28',
  readTime: 11,
  featured: true
@@ -5673,7 +5672,7 @@ export const blogPosts: BlogPost[] = [
  },
  category: 'content-creation',
  tags: ['positioning', 'branding', 'differentiation', 'strategy'],
- author: 'Magic Academy Team',
+ author: '魔道院团队',
  date: '2025-01-29',
  readTime: 12,
  featured: true
@@ -5969,7 +5968,7 @@ Data Analysis
  },
  category: 'ai-tools',
  tags: ['chatgpt', 'ai', 'content-creation'],
- author: 'Magic Academy Team',
+ author: '魔道院团队',
  date: '2025-01-28',
  readTime: 10,
  featured: true
@@ -6156,7 +6155,7 @@ Data Analysis
  },
  category: 'platform-ops',
  tags: ['douyin', 'algorithm', 'growth'],
- author: 'Magic Academy Team',
+ author: '魔道院团队',
  date: '2025-01-27',
  readTime: 15,
  featured: true
@@ -6353,7 +6352,7 @@ Data Analysis
  },
  category: 'platform-ops',
  tags: ['xiaohongshu', 'seeding'],
- author: 'Magic Academy Team',
+ author: '魔道院团队',
  date: '2025-01-26',
  readTime: 13,
  featured: false
@@ -6612,7 +6611,7 @@ Data Analysis
  },
  category: 'monetization',
  tags: ['monetization', 'knowledge-product'],
- author: 'Magic Academy Team',
+ author: '魔道院团队',
  date: '2025-01-25',
  readTime: 14,
  featured: true
