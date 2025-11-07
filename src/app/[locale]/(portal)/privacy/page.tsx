@@ -1,12 +1,14 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'motion/react';
+import EmailContactModal from '@/components/custom/EmailContactModal';
 
 export default function PrivacyPage() {
   const { language } = useLanguage();
   const isZh = language === 'zh';
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
 
   const sections = [
     {
@@ -404,11 +406,20 @@ export default function PrivacyPage() {
               {isZh ? '您的隐私很重要' : 'Your Privacy Matters'}
             </h3>
           </div>
-          <p className="text-lg opacity-90">
+          <p className="text-lg opacity-90 mb-6">
             {isZh
-              ? '如有任何问题或疑虑，请随时通过 1526824204@qq.com 联系我们'
-              : 'If you have any questions or concerns, please feel free to contact us at 1526824204@qq.com'}
+              ? '如有任何问题或疑虑，请随时联系我们'
+              : 'If you have any questions or concerns, please feel free to contact us'}
           </p>
+          <button
+            onClick={() => setIsEmailModalOpen(true)}
+            className="px-8 py-3 bg-white text-orange-600 font-bold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>{isZh ? '联系我们' : 'Contact Us'}</span>
+          </button>
         </motion.div>
 
         {/* Quick Links */}
@@ -419,14 +430,14 @@ export default function PrivacyPage() {
           >
             {isZh ? '返回首页' : 'Back to Home'}
           </a>
-          <a
-            href={`/${language}/faq`}
-            className="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-bold hover:border-blue-500 hover:text-blue-500 transition-colors"
-          >
-            {isZh ? '常见问题' : 'FAQ'}
-          </a>
         </div>
       </div>
+
+      {/* Email Contact Modal */}
+      <EmailContactModal
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+      />
     </div>
   );
 }
