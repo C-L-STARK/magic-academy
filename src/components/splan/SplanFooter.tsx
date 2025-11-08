@@ -34,7 +34,7 @@ export default function SplanFooter() {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              {siteConfig.brand.description[language]}
+              {isZh ? '这里既是修道场，也是桃花源。自律即自由，战胜内心，成为真正的数字游民。' : 'Both training ground and utopia. Discipline brings freedom, overcome yourself, become a true digital nomad.'}
             </p>
             {/* Contact Options */}
             <div className="flex items-center gap-4">
@@ -86,33 +86,9 @@ export default function SplanFooter() {
                   {isZh ? '博客' : 'Blog'}
                 </LocaleLink>
               </li>
-            </ul>
-          </div>
-
-          {/* Training Programs */}
-          <div>
-            <h4 className="font-bold mb-4">{isZh ? '培训项目' : 'Training Programs'}</h4>
-            <ul className="space-y-2 text-sm">
               <li>
-                <LocaleLink href="/training/forex" className="block hover:opacity-80 transition-opacity">
-                  <div className="flex items-center gap-2 text-gray-400">
-                    <span>📈</span>
-                    <span>{isZh ? '职业交易培训' : 'Professional Trading'}</span>
-                  </div>
-                  <p className="text-xs text-gray-500 ml-6 mt-1">
-                    {isZh ? '30天系统化交易培训，获得资金支持' : '30-day systematic training with funding support'}
-                  </p>
-                </LocaleLink>
-              </li>
-              <li className="mt-3">
-                <LocaleLink href="/training/social-media" className="block hover:opacity-80 transition-opacity">
-                  <div className="flex items-center gap-2 text-gray-400">
-                    <span>🎓</span>
-                    <span>{isZh ? '个人品牌孵化' : 'Personal Brand Incubation'}</span>
-                  </div>
-                  <p className="text-xs text-gray-500 ml-6 mt-1">
-                    {isZh ? '打造数字影响力，实现商业变现' : 'Build digital influence and monetize'}
-                  </p>
+                <LocaleLink href="/faq" className="text-gray-400 hover:text-white transition-colors">
+                  {isZh ? '常见问题' : 'FAQ'}
                 </LocaleLink>
               </li>
             </ul>
@@ -125,6 +101,11 @@ export default function SplanFooter() {
               <li>
                 <LocaleLink href="/privacy" className="text-gray-400 hover:text-white transition-colors">
                   {isZh ? '隐私政策' : 'Privacy Policy'}
+                </LocaleLink>
+              </li>
+              <li>
+                <LocaleLink href="/terms" className="text-gray-400 hover:text-white transition-colors">
+                  {isZh ? '服务条款' : 'Terms of Service'}
                 </LocaleLink>
               </li>
               <li>
@@ -148,6 +129,73 @@ export default function SplanFooter() {
                 </a>
               </li>
             </ul>
+          </div>
+
+          {/* Partners */}
+          <div>
+            <h4 className="font-bold mb-4">{isZh ? '合作伙伴' : 'Partners'}</h4>
+            <div className="space-y-4 text-sm">
+              <div>
+                <p className="text-gray-500 text-xs mb-2">{isZh ? '合作经纪商' : 'Brokers'}</p>
+                <ul className="space-y-1">
+                  <li>
+                    <a href="https://www.tickmill.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      Tickmill
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.ecmarkets.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      EC Markets
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.binance.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      Binance
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="text-gray-500 text-xs mb-2">{isZh ? '自营交易公司' : 'Prop Firms'}</p>
+                <ul className="space-y-1">
+                  <li>
+                    <a href="https://ftmo.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      FTMO
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://fundednext.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      FundedNext
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="text-gray-500 text-xs mb-2">{isZh ? '自媒体合作商' : 'Media Partners'}</p>
+                <ul className="space-y-1">
+                  <li>
+                    <a href="https://www.oceanengine.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      {isZh ? '巨量引擎' : 'Ocean Engine'}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://pgy.xiaohongshu.com/solar/pre-trade/kol" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      {isZh ? '小红书千帆' : 'RED Qianfan'}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      YouTube
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      X
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 

@@ -143,20 +143,31 @@ export default function HomePage() {
     siteConfig.divisions.creator,
   ];
 
-  // Rotating descriptions
-  const rotatingTexts = isZh ? [
-    '自律即自由：战胜懒惰、贪婪、恐惧、犹豫、傲慢',
-    '职业交易培训：留下极少数，劝返大多数，你材必有他用',
-    '个人品牌孵化：注重自我成长，构建属于自己的品牌',
-    '这里既是修道场，也是桃花源',
-    '无员工，只有战友、合作伙伴，你就是老板'
-  ] : [
-    'Discipline Brings Freedom: Overcome inner demons',
-    'Trading: Keep the Few, Return the Many',
-    'Branding: Focus on Growth, Build Your Brand',
-    'Both Training Ground and Utopia',
-    'No Employees, Only Comrades - You Are The Boss'
-  ];
+  // Philosophy content for Hero right side
+  const philosophyContent = {
+    title: {
+      zh: '这里既是修道场，也是桃花源',
+      en: 'Both Training Ground and Utopia'
+    },
+    points: [
+      {
+        zh: '自律即自由：战胜懒惰、贪婪、恐惧、犹豫、傲慢',
+        en: 'Discipline Brings Freedom: Overcome inner demons'
+      },
+      {
+        zh: '职业交易培训：留下极少数，劝返大多数，你材必有他用',
+        en: 'Trading: Keep the Few, Return the Many'
+      },
+      {
+        zh: '个人品牌孵化：注重自我成长，构建属于自己的品牌',
+        en: 'Branding: Focus on Growth, Build Your Brand'
+      },
+      {
+        zh: '无员工，只有战友、合作伙伴，你就是老板',
+        en: 'No Employees, Only Comrades - You Are The Boss'
+      }
+    ]
+  };
 
   // Testimonials data - expanded
   const testimonials = [
@@ -214,437 +225,239 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Full Screen with NO TOP PADDING */}
-      <div
-        className="relative min-h-screen flex items-center overflow-hidden -mt-16 pt-16"
-      >
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0">
-          <motion.div
-            className="absolute inset-0"
-            animate={{
-              background: [
-                'linear-gradient(135deg, #F4F1EC 0%, #9BACD8 50%, #F98513 100%)',
-                'linear-gradient(135deg, #F4F1EC 0%, #F98513 50%, #9BACD8 100%)',
-                'linear-gradient(135deg, #9BACD8 0%, #F4F1EC 50%, #F98513 100%)',
-                'linear-gradient(135deg, #F4F1EC 0%, #9BACD8 50%, #F98513 100%)',
-              ],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-        {/* Enhanced Animated Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Large Circles */}
-          <motion.div
-            className="absolute w-96 h-96 rounded-full border-2 border-white/20"
-            style={{ top: '10%', left: '5%' }}
-            animate={{
-              y: [0, 30, 0],
-              x: [0, 20, 0],
-              rotate: [0, 90, 0],
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          />
-          <motion.div
-            className="absolute w-64 h-64 rounded-full bg-white/10"
-            style={{ top: '60%', right: '10%' }}
-            animate={{
-              y: [0, -40, 0],
-              x: [0, -30, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-          />
+      {/* Hero Section - Left-Right Layout with Core Philosophy */}
+      <div className="relative min-h-screen flex items-center overflow-hidden -mt-16 pt-16">
+        {/* Dynamic Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-blue-50"></div>
 
-          {/* Small Dots */}
-          {[...Array(30)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-3 h-3 rounded-full bg-white/40"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, Math.random() * 50 - 25, 0],
-                x: [0, Math.random() * 50 - 25, 0],
-                opacity: [0.2, 0.6, 0.2],
-              }}
-              transition={{
-                duration: Math.random() * 10 + 10,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: Math.random() * 5,
-              }}
-            />
-          ))}
-
-          {/* Geometric Shapes */}
-          <motion.div
-            className="absolute w-40 h-40 border-4 border-orange-400/30"
-            style={{ top: '20%', right: '15%', transform: 'rotate(45deg)' }}
-            animate={{
-              rotate: [45, 135, 45],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          />
-          <motion.div
-            className="absolute w-32 h-32 rounded-full border-4 border-blue-400/30"
-            style={{ bottom: '15%', left: '20%' }}
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
+        {/* Animated Gradient Orbs */}
+        <motion.div
+          className="absolute -top-20 -right-40 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl"
+          style={{ background: 'radial-gradient(circle, #F98513, #FBBF24)' }}
+          animate={{
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute -bottom-20 -left-40 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl"
+          style={{ background: 'radial-gradient(circle, #3B82F6, #8B5CF6)' }}
+          animate={{
+            x: [0, -50, 0],
+            y: [0, 30, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content - WITH ANIMATIONS */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Side - Main Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="space-y-8"
             >
-              <div className="space-y-3">
-                {/* Main Heading with Typewriter */}
-                <h1 className="text-5xl lg:text-7xl font-black leading-tight min-h-[160px] lg:min-h-[200px]">
-                  <span className="block text-gray-900">
-                    <TypewriterTitle text={isZh ? "入魔道 · 修心修身" : "Enter Magic Path"} delay={300} />
-                  </span>
-                  <span className="block text-gray-900 mt-2">
-                    <TypewriterTitle text={isZh ? "成真正数字游民" : "Become Free" } delay={isZh ? 2000 : 1500} />
-                  </span>
-                </h1>
-
-                {/* Rotating Descriptions */}
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-orange-500/10 to-blue-500/10 border-2 border-orange-500/20"
+              >
                 <motion.div
-                  className="max-w-xl"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 3.5, duration: 0.6 }}
-                >
-                  <RotatingText texts={rotatingTexts} />
-                </motion.div>
+                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-orange-500 to-blue-500"
+                  animate={{ scale: [1, 1.3, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+                  {isZh ? '魔道院 · 数字游民培训平台' : 'Magic Academy · Digital Nomad Platform'}
+                </span>
+              </motion.div>
 
-                {/* CTA Buttons */}
-                <motion.div
-                  className="flex flex-col sm:flex-row gap-4 pt-1"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 4, duration: 0.6 }}
-                >
-                  <button
-                    onClick={() => router.push(`/${language}/training/forex`)}
-                    className="group relative px-10 py-5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-                  >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      {siteConfig.divisions.trading.name[language]}
-                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
+              {/* Main Heading */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-5xl lg:text-7xl font-black leading-tight"
+              >
+                {isZh ? (
+                  <>
+                    <span className="block text-gray-900">入魔道</span>
+                    <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-500 to-blue-600">
+                      修心修身
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
-                  </button>
-
-                  <button
-                    onClick={() => router.push(`/${language}/training/social-media`)}
-                    className="group relative px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-                  >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      {siteConfig.divisions.creator.name[language]}
-                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
+                    <span className="block mt-2 text-gray-900">成数字游民</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="block text-gray-900">Enter The</span>
+                    <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-500 to-blue-600">
+                      Magic Path
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
-                  </button>
-                </motion.div>
+                    <span className="block mt-2 text-gray-900">Be Free</span>
+                  </>
+                )}
+              </motion.h1>
 
-                {/* Contact Link */}
-                <motion.button
-                  onClick={() => setIsEmailModalOpen(true)}
-                  className="text-gray-700 hover:text-gray-900 transition-colors text-sm font-medium flex items-center gap-2"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 4.5, duration: 0.6 }}
+              {/* Tagline */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="text-xl text-gray-700 leading-relaxed max-w-xl"
+              >
+                {isZh
+                  ? '自律即自由。战胜内心，实现时间自由、地理位置自由、财务自由'
+                  : 'Discipline brings freedom. Overcome yourself, achieve time, location, and financial freedom'}
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+                className="flex flex-col sm:flex-row gap-4 pt-4"
+              >
+                <button
+                  onClick={() => router.push(`/${language}/training/forex`)}
+                  className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
                 >
-                  {isZh ? '或联系我们了解更多' : 'Or contact us to learn more'}
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </motion.button>
-              </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-700 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="relative flex items-center justify-center gap-2">
+                    {siteConfig.divisions.trading.name[language]}
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                </button>
+
+                <button
+                  onClick={() => router.push(`/${language}/training/social-media`)}
+                  className="group relative px-8 py-4 rounded-xl bg-white border-2 border-blue-600 text-blue-600 font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-blue-600 hover:text-white overflow-hidden"
+                >
+                  <span className="relative flex items-center justify-center gap-2">
+                    {siteConfig.divisions.creator.name[language]}
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                </button>
+              </motion.div>
+
+              {/* Contact Link */}
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.1 }}
+                onClick={() => setIsEmailModalOpen(true)}
+                className="text-gray-600 hover:text-orange-600 transition-colors text-sm font-semibold flex items-center gap-2 group"
+              >
+                {isZh ? '或联系我们了解更多' : 'Or contact us to learn more'}
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </motion.button>
             </motion.div>
 
-            {/* Right Animation Area - ENHANCED & LESS CROWDED */}
+            {/* Right Side - Core Philosophy Box */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[600px] hidden lg:block"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="hidden lg:block"
             >
-              {/* Floating Gallery - More Photos */}
-              <div className="relative w-full h-full">
-                {/* Image 1 - Top Right */}
+              <div className="relative">
+                {/* Main Philosophy Card */}
                 <motion.div
-                  className="absolute top-0 right-0 w-72 h-52 rounded-lg overflow-hidden shadow-2xl border-4 border-white"
-                  animate={{
-                    y: [0, -20, 0],
-                    rotate: [0, 2, 0],
-                  }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="relative bg-white/90 backdrop-blur-xl rounded-2xl p-10 shadow-2xl border-2 border-gray-100"
                 >
-                  <Image
-                    src="/travel-1.png"
-                    alt="Digital Nomad"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                </motion.div>
+                  {/* Decorative Corner Gradient */}
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-orange-500/10 to-blue-500/10 rounded-2xl blur-2xl" />
 
-                {/* Image 2 - Middle Left */}
-                <motion.div
-                  className="absolute top-40 left-0 w-64 h-48 rounded-lg overflow-hidden shadow-2xl border-4 border-white"
-                  animate={{
-                    y: [0, 25, 0],
-                    rotate: [0, -2, 0],
-                  }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                  <Image
-                    src="/travel-2.png"
-                    alt="Freedom Life"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                </motion.div>
-
-                {/* Image 3 - Bottom Right */}
-                <motion.div
-                  className="absolute bottom-0 right-20 w-60 h-44 rounded-lg overflow-hidden shadow-2xl border-4 border-white"
-                  animate={{
-                    y: [0, -15, 0],
-                    rotate: [0, 2, 0],
-                  }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                >
-                  <Image
-                    src="/travel-3.png"
-                    alt="Work Anywhere"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                </motion.div>
-
-                {/* Image 4 - Top Left */}
-                <motion.div
-                  className="absolute top-16 left-8 w-56 h-40 rounded-lg overflow-hidden shadow-2xl border-4 border-white"
-                  animate={{
-                    y: [0, 18, 0],
-                    rotate: [0, -1, 0],
-                  }}
-                  transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                >
-                  <Image
-                    src="/travel-4.png"
-                    alt="Remote Work"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                </motion.div>
-
-                {/* Image 5 - Middle Right */}
-                <motion.div
-                  className="absolute top-1/2 right-12 w-52 h-40 rounded-lg overflow-hidden shadow-2xl border-4 border-white"
-                  animate={{
-                    y: [0, -22, 0],
-                    rotate: [0, 1.5, 0],
-                  }}
-                  transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                >
-                  <Image
-                    src="/travel-5.png"
-                    alt="Digital Life"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                </motion.div>
-
-                {/* Image 6 - Bottom Left */}
-                <motion.div
-                  className="absolute bottom-16 left-24 w-48 h-36 rounded-lg overflow-hidden shadow-2xl border-4 border-white"
-                  animate={{
-                    y: [0, -16, 0],
-                    rotate: [0, -1.5, 0],
-                  }}
-                  transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-                >
-                  <Image
-                    src="/travel-6.png"
-                    alt="Travel Freedom"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                </motion.div>
-
-                {/* Small Data Tags - Scattered */}
-                {/* Students Tag */}
-                <motion.div
-                  className="absolute top-20 left-12 bg-white/95 backdrop-blur-xl px-4 py-2 shadow-xl border-2 border-orange-200"
-                  animate={{
-                    y: [0, 12, 0],
-                  }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
-                    </div>
-                    <div className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
-                      1000+
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Success Rate Tag */}
-                <motion.div
-                  className="absolute top-1/2 right-8 bg-white/95 backdrop-blur-xl px-4 py-2 shadow-xl border-2 border-blue-200"
-                  animate={{
-                    x: [0, -10, 0],
-                  }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
-                      85%
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Income Tag */}
-                <motion.div
-                  className="absolute bottom-24 left-16 bg-white/95 backdrop-blur-xl px-4 py-2 shadow-xl border-2 border-green-200"
-                  animate={{
-                    y: [0, -10, 0],
-                    rotate: [0, 2, 0],
-                  }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-600">
-                      {isZh ? '¥2M+' : '$280k+'}
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Floating Text Snippets */}
-                <motion.div
-                  className="absolute top-10 right-24 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 shadow-xl text-sm font-bold"
-                  animate={{
-                    y: [0, 15, 0],
-                  }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  {isZh ? '30天速成' : '30-Day Fast Track'}
-                </motion.div>
-
-                <motion.div
-                  className="absolute top-1/3 right-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 shadow-xl text-sm font-bold"
-                  animate={{
-                    x: [0, -12, 0],
-                  }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                  {isZh ? '全程指导' : 'Full Mentorship'}
-                </motion.div>
-
-                <motion.div
-                  className="absolute bottom-8 left-40 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 shadow-xl text-sm font-bold"
-                  animate={{
-                    y: [0, -12, 0],
-                  }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                >
-                  {isZh ? '实现自由' : 'Achieve Freedom'}
-                </motion.div>
-
-                {/* Achievement Badge */}
-                <motion.div
-                  className="absolute top-1/2 left-8 bg-white/95 backdrop-blur-xl px-3 py-2 shadow-xl border-2 border-yellow-200"
-                  animate={{
-                    scale: [1, 1.08, 1],
-                  }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  {/* Title Badge */}
+                  <div className="relative mb-8">
+                    <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-gradient-to-r from-orange-500 to-blue-500">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
+                      <span className="font-black text-white text-sm tracking-wider">
+                        {isZh ? '核心理念' : 'Core Philosophy'}
+                      </span>
                     </div>
-                    <div className="text-xs font-black text-gray-900">{isZh ? '认证' : 'Cert'}</div>
                   </div>
-                </motion.div>
 
-                {/* Motivational Quote */}
-                <motion.div
-                  className="absolute bottom-20 right-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-5 py-3 shadow-xl max-w-xs"
-                  animate={{
-                    x: [0, 8, 0],
-                  }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                >
-                  <div className="text-sm font-bold leading-relaxed">
-                    {isZh ? '"财务自由，理想生活"' : '"Freedom & Dreams"'}
+                  {/* Main Philosophy Text */}
+                  <div className="relative space-y-6">
+                    <h3 className="text-3xl font-black text-gray-900 leading-tight">
+                      {isZh ? '这里既是修道场，也是桃花源' : 'Both Training Ground and Utopia'}
+                    </h3>
+
+                    <div className="space-y-4 text-gray-700 leading-relaxed">
+                      <p className="text-lg">
+                        {isZh
+                          ? '能决定你是否成为你希望的自己，只有你自己的心。'
+                          : 'Only your own heart determines whether you become who you wish to be.'}
+                      </p>
+
+                      <p className="text-lg">
+                        {isZh
+                          ? '无论你最终如何选择，你都将是自己的老板。'
+                          : 'Whatever you choose, you will be your own boss.'}
+                      </p>
+
+                      <div className="pt-4 border-t-2 border-gradient-to-r from-orange-500 to-blue-500">
+                        <p className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+                          {isZh
+                            ? '这里没有员工，只有战友、合作伙伴'
+                            : 'No employees here, only comrades and partners'}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Key Points */}
+                    <div className="space-y-3 pt-6">
+                      {philosophyContent.points.slice(0, 2).map((point, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.8 + idx * 0.15 }}
+                          className="flex items-start gap-3 p-4 rounded-xl bg-gradient-to-r from-orange-50 to-blue-50 border border-orange-100"
+                        >
+                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-orange-500 to-blue-500 flex items-center justify-center text-white text-xs font-black">
+                            {idx + 1}
+                          </div>
+                          <p className="text-sm text-gray-700 leading-relaxed pt-0.5">
+                            {point[language]}
+                          </p>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
+
+                  {/* Bottom Gradient Accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 rounded-b-2xl bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500" />
                 </motion.div>
 
-                {/* Additional Small Tags */}
+                {/* Floating Badge */}
                 <motion.div
-                  className="absolute top-2/3 left-24 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-3 py-1.5 shadow-lg text-xs font-bold"
-                  animate={{
-                    rotate: [0, 3, 0],
-                    y: [0, 8, 0],
-                  }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.2, duration: 0.6 }}
+                  className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-500 to-blue-500 text-white px-6 py-3 rounded-xl shadow-xl"
+                  whileHover={{ scale: 1.05, rotate: 3 }}
                 >
-                  {isZh ? '终身支持' : 'Lifetime'}
-                </motion.div>
-
-                <motion.div
-                  className="absolute top-1/4 right-32 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3 py-1.5 shadow-lg text-xs font-bold"
-                  animate={{
-                    y: [0, 10, 0],
-                  }}
-                  transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                >
-                  {isZh ? '快速变现' : 'Quick ROI'}
+                  <div className="font-black text-lg">
+                    {isZh ? '自律即自由' : 'Discipline = Freedom'}
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -658,168 +471,16 @@ export default function HomePage() {
           transition={{ duration: 2, repeat: Infinity }}
         >
           <div className="flex flex-col items-center gap-2">
-            <span className="text-sm text-gray-700 font-medium">{isZh ? '向下滚动' : 'Scroll Down'}</span>
-            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
+            <div className="w-7 h-11 rounded-full border-2 border-orange-600 flex items-start justify-center p-2">
+              <motion.div
+                className="w-1.5 h-1.5 bg-orange-600 rounded-full"
+                animate={{ y: [0, 14, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+            </div>
+            <span className="text-xs text-orange-600 font-bold uppercase tracking-wider">{isZh ? '向下滚动' : 'Scroll'}</span>
           </div>
         </motion.div>
-      </div>
-
-      {/* Features Showcase Section - EXPANDED CONTENT */}
-      <div className="relative py-20 bg-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #9BACD8 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-blue-400"></div>
-              <span className="text-sm font-bold tracking-widest text-gray-500 uppercase">
-                {isZh ? '核心优势' : 'Core Advantages'}
-              </span>
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-orange-400"></div>
-            </div>
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
-              {isZh ? '为什么选择我们？' : 'Why Choose Us?'}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {isZh ? '六大核心优势，全方位保障你的成功之路' : 'Six core advantages to ensure your path to success'}
-            </p>
-          </motion.div>
-
-          {/* Features Grid - EXPANDED */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                number: '01',
-                title: isZh ? '实战导向' : 'Practice-Oriented',
-                desc: isZh ? '所有课程来自一线实战经验，确保学以致用，快速见效。我们的导师团队拥有多年行业经验，每一个教学案例都是真实项目的提炼，让你学到的不仅是理论，更是可以直接应用的实战技能。' : 'All courses from frontline experience, ensuring practical application and quick results. Our mentor team has years of industry experience.',
-                color: '#F98513',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                ),
-                stats: isZh ? '100+ 实战案例' : '100+ Real Cases',
-              },
-              {
-                number: '02',
-                title: isZh ? '快速变现' : 'Quick Monetization',
-                desc: isZh ? '最快30天即可看到收益，持续稳定增长，实现财务自由。我们提供完整的商业化路径规划，从技能学习到变现落地，每一步都有明确的指导和支持，确保你的投入能够快速获得回报。' : 'See results in as fast as 30 days with continuous stable growth. Complete commercialization path planning from learning to monetization.',
-                color: '#9BACD8',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
-                stats: isZh ? '平均 30-90天变现' : 'Avg 30-90 Days',
-              },
-              {
-                number: '03',
-                title: isZh ? '终身支持' : 'Lifetime Support',
-                desc: isZh ? '学习社群+导师答疑，持续更新课程，与优秀同行者共成长。加入魔道院不仅是学习一门技能，更是加入一个充满活力的成长社群，在这里你可以获得持续的学习资源和人脉资源。' : 'Learning community with mentor support and continuous course updates. Join a vibrant growth community with ongoing learning resources.',
-                color: '#F98513',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                ),
-                stats: isZh ? '24/7 社群支持' : '24/7 Support',
-              },
-              {
-                number: '04',
-                title: isZh ? '系统化培养' : 'Systematic Training',
-                desc: isZh ? '从入门到精通的完整学习路径，科学的课程体系设计，循序渐进地提升你的能力。我们的课程经过数百名学员的实践验证，每个模块都经过精心打磨，确保最优的学习效果和知识吸收率。' : 'Complete learning path from beginner to expert with scientifically designed curriculum. Verified by hundreds of students for optimal results.',
-                color: '#9BACD8',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                  </svg>
-                ),
-                stats: isZh ? '5阶段进阶体系' : '5-Stage System',
-              },
-              {
-                number: '05',
-                title: isZh ? '资源对接' : 'Resource Connection',
-                desc: isZh ? '对接行业优质资源，提供平台支持和资金支持，让你的起步更轻松。我们与多家知名企业和平台建立了合作关系，可以为优秀学员提供实习机会、项目合作、资金支持等多方位的资源对接服务。' : 'Connect with premium industry resources, platform and funding support for an easier start. Partnerships with companies offer opportunities and funding.',
-                color: '#F98513',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                  </svg>
-                ),
-                stats: isZh ? '50+ 合作伙伴' : '50+ Partners',
-              },
-              {
-                number: '06',
-                title: isZh ? '成果保障' : 'Results Guaranteed',
-                desc: isZh ? '完善的考核体系和成果追踪机制，确保你的学习成果可量化、可验证。我们会定期评估你的学习进度和成果，及时调整学习计划，确保每一位学员都能达到预期目标，真正实现能力提升和收入增长。' : 'Complete assessment system and results tracking to ensure measurable and verifiable learning outcomes with regular progress evaluations.',
-                color: '#9BACD8',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                ),
-                stats: isZh ? '85% 达标率' : '85% Pass Rate',
-              },
-            ].map((feature, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.6 }}
-                className="group relative"
-              >
-                <div className="bg-gradient-to-br from-white to-gray-50 p-8 border-2 border-gray-100 hover:border-gray-300 transition-all duration-300 h-full">
-                  {/* Number Badge */}
-                  <div className="flex items-start justify-between mb-6">
-                    <span className="text-6xl font-black text-gray-100 group-hover:text-gray-200 transition-colors">
-                      {feature.number}
-                    </span>
-                    <div className="p-3 rounded-full bg-gradient-to-br from-gray-50 to-gray-100 text-gray-700 group-hover:scale-110 transition-transform">
-                      {feature.icon}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-2xl font-black text-gray-900 mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {feature.desc}
-                  </p>
-
-                  {/* Stats Badge */}
-                  <div className="inline-flex items-center gap-2 bg-gray-100 px-4 py-2 text-sm font-bold" style={{ color: feature.color }}>
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>{feature.stats}</span>
-                  </div>
-
-                  {/* Hover Effect */}
-                  <div
-                    className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-3xl"
-                    style={{ background: `radial-gradient(circle, ${feature.color}, transparent)` }}
-                  ></div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </div>
 
       {/* Magic Philosophy Section */}
