@@ -33,6 +33,10 @@ export default function UnifiedNavbar() {
       name: t('nav.blog'),
       link: "/blog",
     },
+    {
+      name: language === 'zh' ? '常见问题' : 'FAQ',
+      link: "/faq",
+    },
   ];
 
   useEffect(() => {

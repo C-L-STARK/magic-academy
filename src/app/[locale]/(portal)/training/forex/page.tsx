@@ -234,6 +234,79 @@ export default function TradingTrainingPage() {
       {/* Trading Career Story Section */}
       <TradingCareerStory />
 
+      {/* Student Profit Screenshots Section - Infinite Scroll */}
+      <div className="relative py-20 overflow-hidden bg-gradient-to-br from-orange-50/30 via-white to-blue-50/30">
+        <div className="relative max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-orange-400"></div>
+              <span className="text-sm font-bold tracking-widest text-orange-500 uppercase">
+                {isZh ? '真实收益' : 'Real Profits'}
+              </span>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-blue-400"></div>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
+              {isZh ? '学员收益展示' : 'Student Profits Showcase'}
+            </h2>
+            <p className="text-xl text-gray-600">
+              {isZh ? '真实的交易记录，验证的盈利能力' : 'Real trading records, verified profitability'}
+            </p>
+          </motion.div>
+
+          {/* Infinite Scroll Container */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-6"
+              animate={{
+                x: [0, -2880],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 50,
+                  ease: "linear",
+                },
+              }}
+            >
+              {/* Duplicate images for seamless loop */}
+              {[...Array(2)].map((_, setIdx) => (
+                <React.Fragment key={setIdx}>
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((num) => (
+                    <div
+                      key={`${setIdx}-${num}`}
+                      className="relative w-96 h-96 flex-shrink-0 overflow-hidden border-4 border-white shadow-xl group cursor-pointer bg-white"
+                    >
+                      <Image
+                        src={`/profits/${num}.${num === 12 ? 'jpg' : 'png'}`}
+                        alt={`Profit ${num}`}
+                        fill
+                        className="object-contain group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <div className="text-white font-bold text-lg mb-2">
+                            {isZh ? '真实交易记录' : 'Real Trading Record'}
+                          </div>
+                          <div className="text-white/80 text-sm">
+                            {isZh ? '经过验证的学员收益' : 'Verified Student Profit'}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </React.Fragment>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
       {/* Why Choose Us Section */}
       <div className="relative py-24 bg-white overflow-hidden">
         <div className="absolute inset-0 opacity-5">
@@ -993,457 +1066,39 @@ export default function TradingTrainingPage() {
         </div>
       </div>
 
-      {/* FAQ Section */}
-      <div className="relative py-24 bg-white overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6">
+      {/* Contact Us Section */}
+      <div className="relative py-20 bg-gradient-to-br from-orange-50 via-white to-blue-50 overflow-hidden">
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="relative"
           >
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-orange-400"></div>
-              <span className="text-sm font-bold tracking-widest text-orange-500 uppercase">
-                {isZh ? '常见问题' : 'FAQ'}
-              </span>
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-orange-400"></div>
-            </div>
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
-              {isZh ? '常见问题解答' : 'Frequently Asked Questions'}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {isZh
-                ? '开启职业交易之路前，先读懂这些问题'
-                : 'Understand these questions before starting your professional trading journey'}
-            </p>
-          </motion.div>
-
-          <div className="space-y-6">
-            {/* About Training */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-orange-50/30 to-white p-8 border-l-4 border-orange-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                {isZh ? '关于培训' : 'About Training'}
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '什么是 FX Killer 外汇交易员培训？' : 'What is FX Killer Forex Trader Training?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '我们是一个专注于筛选和培养顶尖外汇交易员的专业培训平台。我们致力于用最短的时间从大量人群中筛选出少数适合做交易的人才并进行培养。我们将在 30个工作日 内判断新人是否是做交易的可塑之才。通过考核者将获得资金支持，成为独立交易员或基金经理。'
-                      : 'We are a professional training platform focused on selecting and cultivating elite forex traders. We are committed to identifying, in the shortest time possible, the few individuals from a large population who are suited for trading, and providing them with cultivation. Within 30 working days, we will determine whether newcomers have the potential to become traders. Those who pass the assessment will receive capital support and become independent traders or fund managers.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '为什么筛选如此严格？' : 'Why is the selection so strict?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '我们的理念是培养真正适合的人，留下极少数，劝返大多数。在交易的世界里，有些人天生不适合。我们用严格的筛选机制确保只有真正适合的人才能进入。这不是贬低，而是对每个人负责——不让不适合的人在二级市场上成为韭菜。'
-                      : 'Our philosophy is to cultivate those truly suited, retain the few, and advise the majority to pursue other paths. In the trading world, some people are inherently unsuited. We use a strict selection mechanism to ensure only those truly suited can enter. This isn\'t disparagement, but responsibility for everyone—preventing unsuited individuals from becoming cannon fodder in secondary markets.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '30个工作日会学习什么？' : 'What will I learn in 30 working days?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>{isZh ? '第1-5天' : 'Days 1-5'}</strong>: {isZh ? '完成规则练习，熟悉交易系统基本规则（15个标准进场点不出错）' : 'Complete rules practice, familiarize with basic trading system rules (15 standard entry points without errors)'}
-                    <br />
-                    <strong>{isZh ? '第6-20天' : 'Days 6-20'}</strong>: {isZh ? '盈利练习，找到适合自己的品种，要求连续10个工作日不错单、不漏单、不亏损' : 'Profit practice, find suitable currency pairs, requirement: 10 consecutive working days with no missed entries, no missed exits, no losses'}
-                    <br />
-                    <strong>{isZh ? '第21-30天' : 'Days 21-30'}</strong>: {isZh ? '小额实盘训练（如通过盈利考核）' : 'Small-amount live training (if profit assessment passed)'}
-                    <br />
-                    {isZh ? '软件到期前不能完成考核，将被劝退。' : 'Failure to complete assessment before software expiration results in dismissal.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '为什么只有一次机会？' : 'Why only one chance?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '因为交易就像做手术，务必严肃，容不得任何不遵守规则的人。一旦开始职业交易训练，会投入大量精力和时间去培养。每个人的时间和精力都很宝贵，我们需要确保双方的投入都是值得的。匹配度决定一切。'
-                      : 'Because trading is like performing surgery—utmost seriousness required, no tolerance for rule violators. Once professional trading training begins, significant energy and time are invested in cultivation. Everyone\'s time and energy are precious; we need to ensure both parties\' investment is worthwhile. Compatibility determines everything.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '通过考核的概率有多大？' : 'What is the probability of passing the assessment?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '根据历史数据，通过考核的概率 < 18%。但对你而言，要么是1%，要么是99%。这取决于你是否真正适合做交易，是否严格遵守纪律，是否能承受压力并保持情绪稳定。'
-                      : 'Based on historical data, the probability of passing is < 18%. But for you, it\'s either 1% or 99%. It depends on whether you\'re truly suited for trading, whether you strictly follow discipline, and whether you can handle pressure while maintaining emotional stability.'}
-                  </p>
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-blue-500/5 blur-xl"></div>
+            <div className="relative bg-white/80 backdrop-blur-xl border-2 border-orange-200 p-12 shadow-2xl">
+              <div className="mb-6">
+                <div className="inline-block w-16 h-16 bg-gradient-to-br from-orange-500 to-blue-500 flex items-center justify-center mb-4">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                 </div>
               </div>
-            </motion.div>
-
-            {/* Learning & Requirements */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-gradient-to-br from-orange-50/30 to-white p-8 border-l-4 border-orange-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                {isZh ? '学习与要求' : 'Learning & Requirements'}
+              <h3 className="text-3xl font-black text-gray-900 mb-4">
+                {isZh ? '准备好开始你的交易之路了吗？' : 'Ready to Start Your Trading Journey?'}
               </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '培训是免费的吗？' : 'Is the training free?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '是的，培训过程不收取学费。但你需要付出的是时间和精力。免费的往往是最"贵"的——一旦被选中进入培训，需要全身心投入。真正能坚持下来的人虽然不会为金钱所累，但的确"任重道远"。'
-                      : 'Yes, the training process is free of tuition. But what you need to invest is time and energy. Free is often the most "expensive"—once selected for training, full dedication is required. Those who truly persevere won\'t be burdened by money, but indeed "the road is long and arduous."'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '需要什么样的基础条件？' : 'What are the basic requirements?'}
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
-                    <li>{isZh ? '大专学历以上，35岁以下' : 'Associate degree or higher, under 35 years old'}</li>
-                    <li>{isZh ? '认真、细心、耐心、心理健康' : 'Serious, meticulous, patient, psychologically healthy'}</li>
-                    <li>{isZh ? '连续30个工作日可投入' : 'Continuous 30 working days available'}</li>
-                    <li>{isZh ? 'Windows电脑，独立的交易环境' : 'Windows computer, independent trading environment'}</li>
-                    <li>{isZh ? '周一到周五，每天最低保证 13:30 - 21:30 在线' : 'Monday to Friday, minimum guaranteed online 1:30 PM - 9:30 PM'}</li>
-                    <li>{isZh ? '北京时间20:00参加团队长会议室复盘' : 'Beijing Time 8:00 PM team leader conference room debrief'}</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '5天不能完成规则考核会怎样？' : 'What happens if I can\'t complete rules assessment in 5 days?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '5天不能完成规则考核，将酌情劝退处理。我们的筛选机制非常严格，如果连基本规则都无法快速掌握，说明可能不适合这个行业。这是为了保护你，避免浪费更多时间。'
-                      : 'Failure to complete rules assessment in 5 days results in discretionary dismissal. Our selection mechanism is very strict. If you can\'t quickly master basic rules, it indicates you may not be suited for this industry. This protects you from wasting more time.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '通过考核后可以获得什么？' : 'What do I get after passing the assessment?'}
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
-                    <li><strong>{isZh ? '小额实盘' : 'Small-amount live'}</strong>: {isZh ? '20美金仓位，配资100美金' : '$20 position, $100 capital allocation'}</li>
-                    <li><strong>{isZh ? '大额实盘' : 'Large-amount live'}</strong>: {isZh ? '根据小额实盘表现设定' : 'Set based on small-amount live performance'}</li>
-                    <li><strong>{isZh ? '分润比例' : 'Profit share'}</strong>: {isZh ? '60%-90%+（随能力提升而提高）' : '60%-90%+ (increases with ability improvement)'}</li>
-                    <li><strong>{isZh ? '完全自由' : 'Complete freedom'}</strong>: {isZh ? '不受时间空间限制，可以在世界任何角落工作' : 'Unrestricted by time and space, can work anywhere in the world'}</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '学习过程中可以提问吗？' : 'Can I ask questions during learning?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '可以。每天北京时间20:00有团队长会议室复盘，可以直接开麦与团队长沟通。其他时间可以通过微信与团队长联系。但请注意：学员之间不得加微信、电话等联系方式，这是纪律红线。'
-                      : 'Yes. Daily Beijing Time 8:00 PM team leader conference room debrief where you can communicate directly with the team leader. Other times you can contact via WeChat. But note: Students must not add WeChat, phone, or other contact methods between each other—this is a discipline red line.'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Income & Profit Share */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-orange-50/30 to-white p-8 border-l-4 border-orange-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                {isZh ? '收入与分润' : 'Income & Profit Share'}
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '关于收入、社保、底薪和薪资结构' : 'About Income, Benefits, Base Salary, and Compensation Structure'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '任何盈利导向的企业，都不会做亏本买卖。在我们这个极简行业，所有价值都源于二级市场的买卖差价——简单、直接、残酷。在你证明盈利能力（通过考核）之前，我们不会投入一分钱。考核通过后，你的实际收入，绝不会超过你在"战场"（二级市场）上缴获的"战利品"。'
-                      : 'Any profit-oriented enterprise won\'t do business at a loss. In our minimalist industry, all value comes from market price differences—simple, direct, brutal. Before you prove profitability (pass assessment), we won\'t invest a penny. After passing, your actual income will never exceed the "spoils" you capture in the "battlefield" (secondary market).'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '通过考核后的收入分配如何？' : 'How is income distributed after passing the assessment?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '你在战场获得的战利品，至少 60% 属于你个人，随着你的能力提升，这个比例也会随之提高，至高可达 90% 以上。剩下的属于我们，所以我们会用心培养每一位准交易员——你战场战利品多，我们战利品也才会多，我们是一条船上的战友，荣辱与共！'
-                      : 'The spoils you capture on the battlefield—at least 60% belong to you personally. As your abilities improve, this ratio increases, reaching up to 90% and beyond. The rest belongs to us, so we will cultivate every trainee wholeheartedly—the more spoils you get, the more we get. We are comrades on the same boat, sharing honor and disgrace!'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '小额实盘的风控要求是什么？' : 'What are the risk control requirements for small-amount live trading?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed mb-2">
-                    {isZh ? '小额实盘只有一次机会，请珍惜：' : 'Small-amount live trading has only one chance, please cherish it:'}
-                  </p>
-                  <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
-                    <li>{isZh ? '日回撤不超过 20%' : 'Daily drawdown not exceeding 20%'}</li>
-                    <li>{isZh ? '周总回撤不得超过 30%' : 'Weekly total drawdown not exceeding 30%'}</li>
-                    <li>{isZh ? '超过回撤要求即视为失败，劝退' : 'Exceeding drawdown requirements is considered failure, resulting in dismissal'}</li>
-                  </ul>
-                  <p className="text-gray-700 leading-relaxed mt-2">
-                    {isZh ? '这是硬性规定，目的是培养你的风险管理能力。' : 'This is a hard requirement aimed at cultivating your risk management ability.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '为什么不需要付学费？' : 'Why is there no tuition fee?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '跟传统学科不同，不需要你付出数万美金的"学费"，毕竟这是一个钱生钱的行当。我们的模式是：我们培养你，你通过后我们分享你的战果。这是一种合作共赢的关系，而非雇佣关系。你是一个独立的创业者，独立的个体。'
-                      : 'Unlike traditional disciplines, you don\'t need to pay tens of thousands in "tuition"—after all, this is a business of money making money. Our model: we cultivate you, after you pass we share your results. This is a mutual cooperation relationship, not employment. You are an independent entrepreneur, an independent individual.'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Trading Discipline */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-gradient-to-br from-red-50/30 to-white p-8 border-l-4 border-red-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                {isZh ? '交易纪律' : 'Trading Discipline'}
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '什么是交易铁律？' : 'What are Trading Iron Laws?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '交易纪律就像法律法规，触碰一次就会被标上不信任的标签。一旦触碰，就再也无法进入矩阵团队；第二次触碰红线，直接劝退离开团队。交易就像做手术，务必严肃，容不得任何不遵守规则的人。'
-                      : 'Trading discipline is like laws and regulations; touching it once brands you as untrustworthy. Once touched, you can never enter the matrix team; a second violation of red lines results in direct dismissal from the team. Trading is like performing surgery—utmost seriousness required, no tolerance for rule violators.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '交易规则红线有哪些？' : 'What are the trading rule red lines?'}
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
-                    <li>{isZh ? '硬止损线不能移动，位置务必设置正确' : 'Hard stop-loss lines cannot be moved; positions must be set correctly'}</li>
-                    <li>{isZh ? '只有标准和激进两种进场方式（盈利训练阶段额外增加破止损线入场），其他都是错单' : 'Only standard and aggressive entry methods (profit training phase additionally includes break-stop-loss-line entry), others are errors'}</li>
-                    <li>{isZh ? '不能跨越红折线持仓' : 'Cannot hold positions across red lines'}</li>
-                    <li>{isZh ? '止损和出场必须满足规则条件，不满足一律按错单处理' : 'Stop-loss and exit must meet rule conditions; non-compliance is treated as errors'}</li>
-                    <li>{isZh ? '5倍以上利润才能使用止盈线' : 'Take-profit lines can only be used with 5x+ profit'}</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '会议纪律红线有哪些？' : 'What are the meeting discipline red lines?'}
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
-                    <li><strong>{isZh ? '学员之间不得加微信、电话等联系方式' : 'Students must not add WeChat, phone, or other contact methods between each other'}</strong></li>
-                    <li>{isZh ? '会议室内保持严肃，不得谈论除交易外其他话题' : 'Maintain seriousness in conference rooms; no discussion of topics other than trading'}</li>
-                  </ul>
-                  <p className="text-gray-700 leading-relaxed mt-2">
-                    {isZh ? '违反以上任何一条，都将被视为触碰红线。' : 'Violating any of the above will be considered touching red lines.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '如果不适合做交易会怎样？' : 'What happens if I\'m not suited for trading?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '如果在30个工作日内，我们判断你不适合做交易，会如实告知，并劝诫其此生不要踏足二级市场。这不是侮辱，而是保护。不适合的人进入二级市场，最终只会成为韭菜，亏损累累。我们帮你避免这个结局。'
-                      : 'If within 30 working days we judge you unsuited for trading, we will be honest and advise you never to enter secondary markets. This isn\'t insult, but protection. Unsuited people entering secondary markets ultimately only become cannon fodder with cumulative losses. We help you avoid this outcome.'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Other Questions */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="bg-gradient-to-br from-orange-50/30 to-white p-8 border-l-4 border-orange-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                {isZh ? '其他问题' : 'Other Questions'}
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '为什么说"年轻人更适合"？' : 'Why are "young people more suitable"?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '国内多数"经验丰富"的中年交易员，往往是失败者：不良习惯缠身，或在不上不下的泥沼中挣扎。经验有时是枷锁，而非利剑。真正适配的是20-35岁的年轻人：学习迅捷、适应力强，能直面市场风暴。我们计划在30个工作日内，让年轻人直达那些"专家"10-20年的盈利高度。'
-                      : 'Most "experienced" middle-aged traders in China are often failures: plagued by bad habits or struggling in mediocrity. Experience can sometimes be shackles, not a sword. Truly suited are 20-35-year-old young people: quick learners, highly adaptable, able to face market storms directly. We plan to bring young people to the profitability level of those "experts" with 10-20 years of experience within 30 working days.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '交易有风险吗？' : 'Does trading carry risk?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>{isZh ? '交易存在较高风险' : 'Trading carries high risk'}</strong>{isZh ? '，可能导致本金损失。市场波动、杠杆使用、情绪化决策等都可能带来亏损。我们会系统教授风险管理知识，但请务必记住：' : ', potentially leading to principal loss. Market volatility, leverage use, emotional decisions can all bring losses. We will systematically teach risk management knowledge, but please remember:'} <strong>{isZh ? '交易有风险，投资需谨慎' : 'Trading carries risk, investment requires caution'}</strong>{isZh ? '，不要投入超过您承受能力的资金。' : '—do not invest funds beyond your capacity to bear.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '我可以一边工作一边参加培训吗？' : 'Can I participate in training while working?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '不可以。培训要求连续30个工作日，周一到周五每天最低保证 13:30 - 21:30 在线。这是全职投入的筛选和培养过程。如果无法保证时间投入，建议不要申请，因为这会浪费双方的时间。'
-                      : 'No. Training requires continuous 30 working days, Monday to Friday minimum guaranteed online 1:30 PM - 9:30 PM. This is a full-time selection and cultivation process. If you cannot guarantee time investment, we suggest not applying, as this wastes both parties\' time.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '通过考核后还需要每天在线吗？' : 'Do I still need to be online daily after passing the assessment?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '不需要。通过考核进入大额矩阵后，你将拥有完全自由的工作时间，每天不限制交易量，只需保证每日不亏的底线即可。你可以在阿尔卑斯山滑雪，夏威夷游泳或北海道发呆……金钱会源源不断地自动流入你的口袋。'
-                      : 'No. After passing and entering the large-amount matrix, you will have complete freedom in working hours, no daily trading volume limits, just maintain the baseline of no daily losses. You can ski in the Alps, swim in Hawaii, or daydream in Hokkaido... Money will continuously flow into your pocket.'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Final CTA Section */}
-      <div className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px]"
-            animate={{
-              rotate: [0, 360],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 rounded-full blur-3xl opacity-20"></div>
-          </motion.div>
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center gap-3 mb-8">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-orange-400"></div>
-              <span className="text-sm font-bold tracking-widest text-gray-400 uppercase">
-                {isZh ? '现在就开始' : 'Start Now'}
-              </span>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-orange-400"></div>
-            </div>
-
-            <h2 className="text-5xl lg:text-7xl font-black mb-8 leading-tight">
-              {isZh ? '准备好了吗？' : 'Ready?'}
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                {isZh ? '开启职业交易之路' : 'Start Your Trading Career'}
-              </span>
-            </h2>
-
-            <p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              {isZh
-                ? '记住：最大风险是淘汰，成本是时间。若明朗、准备就绪，预约面试。通过后，入训。'
-                : 'Remember: The greatest risk is elimination, the cost is time. If clear and ready, schedule an interview. After passing, enter training.'}
-            </p>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
-              {[
-                { icon: '⚡', value: isZh ? '10-15%' : '10-15%', label: isZh ? '最终通过率' : 'Pass Rate' },
-                { icon: '⏱️', value: isZh ? '45天' : '45D', label: isZh ? '时间成本' : 'Time Cost' },
-                { icon: '💰', value: isZh ? '完全免费' : 'Free', label: isZh ? '金钱成本' : 'Money Cost' },
-                { icon: '🎯', value: isZh ? '只有一次' : 'One', label: isZh ? '机会次数' : 'Chance' },
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:bg-white/10 transition-all"
-                >
-                  <div className="text-4xl mb-2">{item.icon}</div>
-                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mb-1">
-                    {item.value}
-                  </div>
-                  <div className="text-xs text-gray-400 font-semibold uppercase tracking-wider">
-                    {item.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                {isZh
+                  ? '立即联系我们，了解更多关于职业交易员培训的详细信息，我们将在24小时内回复您的咨询。'
+                  : 'Contact us now to learn more about our professional trading training. We\'ll respond to your inquiry within 24 hours.'}
+              </p>
               <button
                 onClick={handleApply}
-                className="group px-12 py-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-2 relative overflow-hidden"
+                className="px-10 py-4 bg-gradient-to-r from-orange-500 to-blue-500 text-white font-bold text-lg transition-all hover:shadow-2xl hover:-translate-y-1"
               >
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  {isZh ? '立即预约面试' : 'Schedule Interview'}
-                  <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
+                {isZh ? '立即咨询' : 'Contact Us Now'}
               </button>
-
-              <LocaleLink
-                href="/psychology-test"
-                className="group px-12 py-6 bg-white/5 border-2 border-orange-500 text-orange-400 font-black text-xl transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 flex items-center justify-center gap-3"
-              >
-                {isZh ? '完成心理测评' : 'Psychology Test'}
-                <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </LocaleLink>
             </div>
-
-            <p className="text-gray-500 text-sm mt-8">
-              {isZh
-                ? '请在充分了解并确认自己符合全部条件后再申请'
-                : 'Please apply only after fully understanding and confirming you meet all requirements'}
-            </p>
           </motion.div>
         </div>
       </div>

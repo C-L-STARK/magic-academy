@@ -598,31 +598,31 @@ export default function PersonalBrandPage() {
                 name: isZh ? '小王' : 'Xiao Wang',
                 niche: isZh ? '职场技能' : 'Career Skills',
                 achievement: isZh
-                  ? '3个月从0涨粉10万，品牌合作月入3万+。从职场小白成长为垂直领域KOL。'
-                  : 'Grew from 0 to 100k followers in 3 months, earning $4k+ monthly from brand deals. Became a niche KOL.',
+                  ? '3个月从0涨粉2万，品牌合作月入5千+。从职场小白成长为垂直领域博主。'
+                  : 'Grew from 0 to 20k followers in 3 months, earning $700+ monthly from brand deals. Became a niche blogger.',
                 platforms: isZh ? '抖音 + 小红书' : 'Douyin + RED',
-                followers: '100k+',
-                income: isZh ? '¥3万+' : '$4k+',
+                followers: '2万+',
+                income: isZh ? '¥5千+' : '$700+',
               },
               {
                 name: isZh ? '阿丽' : 'A Li',
                 niche: isZh ? '美妆穿搭' : 'Beauty & Fashion',
                 achievement: isZh
-                  ? '6个月涨粉50万，与20+品牌合作。实现从上班族到全职博主的转变。'
-                  : 'Gained 500k followers in 6 months, partnered with 20+ brands. Transitioned from office worker to full-time creator.',
+                  ? '6个月涨粉8万，与10+品牌合作。实现从上班族到全职博主的转变。'
+                  : 'Gained 80k followers in 6 months, partnered with 10+ brands. Transitioned from office worker to full-time creator.',
                 platforms: isZh ? '小红书 + B站' : 'RED + Bilibili',
-                followers: '500k+',
-                income: isZh ? '¥10万+' : '$14k+',
+                followers: '8万+',
+                income: isZh ? '¥2万+' : '$3k+',
               },
               {
                 name: isZh ? '老张' : 'Lao Zhang',
                 niche: isZh ? '创业分享' : 'Entrepreneurship',
                 achievement: isZh
-                  ? '全平台运营，打造个人品牌矩阵。年收入超200万，实现知识变现。'
-                  : 'Multi-platform operations, built brand matrix. Annual income $280k+, achieved knowledge monetization.',
+                  ? '全平台运营，打造个人品牌矩阵。月收入稳定超5万，实现知识变现。'
+                  : 'Multi-platform operations, built brand matrix. Monthly income $7k+, achieved knowledge monetization.',
                 platforms: isZh ? '全平台' : 'All Platforms',
-                followers: isZh ? '100万+' : '1M+',
-                income: isZh ? '¥200万+' : '$280k+',
+                followers: isZh ? '20万+' : '200k+',
+                income: isZh ? '¥5万+' : '$7k+',
               },
             ].map((story, idx) => (
               <motion.div
@@ -772,395 +772,39 @@ export default function PersonalBrandPage() {
         </div>
       </div>
 
-      {/* FAQ Section */}
-      <div className="relative py-24 bg-white overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6">
+      {/* Contact Us Section */}
+      <div className="relative py-20 bg-gradient-to-br from-orange-50 via-white to-blue-50 overflow-hidden">
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="relative"
           >
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-blue-400"></div>
-              <span className="text-sm font-bold tracking-widest text-blue-500 uppercase">
-                {isZh ? '常见问题' : 'FAQ'}
-              </span>
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-blue-400"></div>
-            </div>
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
-              {isZh ? '常见问题解答' : 'Frequently Asked Questions'}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {isZh
-                ? '开始个人品牌之旅前，先了解这些关键问题'
-                : 'Understand these key questions before starting your personal brand journey'}
-            </p>
-          </motion.div>
-
-          <div className="space-y-6">
-            {/* About Personal Branding */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-50/30 to-white p-8 border-l-4 border-blue-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                {isZh ? '关于个人品牌' : 'About Personal Branding'}
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '什么是个人品牌孵化培训？' : 'What is Personal Brand Incubation Training?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '我们提供从0到1的完整个人品牌打造体系，涵盖定位、内容创作、平台运营、粉丝增长到变现的全流程培训。通过12周系统化学习，帮助你在抖音、小红书、B站、YouTube等8+主流平台建立个人影响力，实现知识变现。'
-                      : 'We provide a complete 0-to-1 personal brand building system, covering positioning, content creation, platform operations, follower growth to monetization. Through 12 weeks of systematic learning, help you establish personal influence on 8+ major platforms including Douyin, Xiaohongshu, Bilibili, YouTube, and achieve knowledge monetization.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '我没有任何经验，可以参加吗？' : 'Can I join without any experience?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '当然可以！我们的课程专门为0基础学员设计。从最基础的个人定位开始，到内容创作、平台运营、粉丝增长，每一步都有详细的教学和实战练习。我们提供的AI工具和模板库能大大降低创作门槛。'
-                      : 'Absolutely! Our course is specifically designed for beginners. From basic personal positioning to content creation, platform operations, and follower growth—each step includes detailed teaching and practical exercises. Our AI tools and template library significantly lower the creation threshold.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '12周的培训内容包括什么？' : 'What does the 12-week training include?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    <strong>{isZh ? '第1-3周' : 'Weeks 1-3'}</strong>: {isZh ? '个人IP定位、目标受众分析、内容方向规划' : 'Personal branding positioning, target audience analysis, content direction planning'}
-                    <br />
-                    <strong>{isZh ? '第4-6周' : 'Weeks 4-6'}</strong>: {isZh ? '爆款内容创作技巧、视频制作、AI工具应用' : 'Viral content creation techniques, video production, AI tool application'}
-                    <br />
-                    <strong>{isZh ? '第7-9周' : 'Weeks 7-9'}</strong>: {isZh ? '多平台运营策略、算法规则、快速涨粉技巧' : 'Multi-platform operation strategies, algorithm rules, rapid follower growth tactics'}
-                    <br />
-                    <strong>{isZh ? '第10-12周' : 'Weeks 10-12'}</strong>: {isZh ? '变现方式、广告合作、私域运营、产品设计' : 'Monetization methods, ad partnerships, private domain operations, product design'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '需要投入多少时间？' : 'How much time investment is required?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '建议每周投入10-15小时用于学习和实践。包括：课程学习（2-3小时）、内容创作（5-8小时）、社群交流和作业（2-4小时）。时间可以灵活安排，适合在职人员利用业余时间学习。'
-                      : 'We recommend 10-15 hours per week for learning and practice, including: course learning (2-3 hours), content creation (5-8 hours), community interaction and assignments (2-4 hours). Flexible scheduling suitable for working professionals using spare time.'}
-                  </p>
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-blue-500/5 blur-xl"></div>
+            <div className="relative bg-white/80 backdrop-blur-xl border-2 border-blue-200 p-12 shadow-2xl">
+              <div className="mb-6">
+                <div className="inline-block w-16 h-16 bg-gradient-to-br from-orange-500 to-blue-500 flex items-center justify-center mb-4">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                 </div>
               </div>
-            </motion.div>
-
-            {/* Platform & Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-gradient-to-br from-blue-50/30 to-white p-8 border-l-4 border-blue-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                {isZh ? '平台与内容' : 'Platform & Content'}
+              <h3 className="text-3xl font-black text-gray-900 mb-4">
+                {isZh ? '准备好打造你的个人品牌了吗？' : 'Ready to Build Your Personal Brand?'}
               </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '应该选择哪些平台？' : 'Which platforms should I choose?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '根据你的内容类型和目标受众选择。我们教你如何运营8+主流平台：抖音（短视频）、小红书（图文+短视频）、B站（中长视频）、快手、YouTube、Instagram、微博、知乎。建议初期专注1-2个平台，熟练后再扩展到多平台矩阵。'
-                      : 'Choose based on your content type and target audience. We teach you to operate 8+ major platforms: Douyin (short video), Xiaohongshu (image+text+video), Bilibili (medium-long video), Kuaishou, YouTube, Instagram, Weibo, Zhihu. We recommend focusing on 1-2 platforms initially, then expanding to multi-platform matrix after proficiency.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '不会拍视频、不会写文案怎么办？' : 'What if I can\'t shoot videos or write copy?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '不用担心！我们提供完整的工具支持：ChatGPT文案生成模板、Midjourney配图教程、剪映/CapCut视频剪辑教学、1000+爆款标题库、各类脚本模板。同时，我们教你如何用AI工具10倍提效，让内容创作变得简单高效。'
-                      : 'Don\'t worry! We provide complete tool support: ChatGPT copywriting templates, Midjourney image tutorials, Jianying/CapCut video editing teaching, 1000+ viral title library, various script templates. Additionally, we teach you how to use AI tools for 10x efficiency, making content creation simple and efficient.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '如何找到自己的内容定位？' : 'How to find my content positioning?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '我们有系统的定位方法论：从自我分析（兴趣、专长、经历）到市场研究（需求、竞品、差异化），帮你找到最适合的个人品牌定位。通过心理测评、一对一咨询、案例分析等方式，确保你的定位既符合市场需求，又能发挥个人优势。'
-                      : 'We have a systematic positioning methodology: from self-analysis (interests, expertise, experience) to market research (demand, competition, differentiation), helping you find the most suitable personal brand positioning. Through psychology tests, one-on-one consultations, case analyses, we ensure your positioning meets market demand while leveraging personal strengths.'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Monetization & Growth */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-blue-50/30 to-white p-8 border-l-4 border-blue-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                {isZh ? '变现与成长' : 'Monetization & Growth'}
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '多久可以开始变现？' : 'How soon can I start monetizing?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '从粉丝1000开始就能变现！我们教你多种变现方式：小额广告合作（1000粉丝起）、知识付费（课程、咨询）、电商带货（淘宝客、直播带货）、私域运营（社群、会员）。不需要等到百万粉丝，边学边赚，快速实现正向反馈。'
-                      : 'You can start monetizing from 1000 followers! We teach multiple monetization methods: small ad partnerships (from 1000 followers), knowledge monetization (courses, consulting), e-commerce (affiliate marketing, live streaming), private domain operations (communities, memberships). No need to wait for millions of followers—earn while you learn with rapid positive feedback.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '学员平均增长多少粉丝？' : 'How many followers do students typically gain?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '根据学员反馈，3个月平均涨粉3-10万，6个月20-50万。当然，具体增长取决于内容质量、更新频率、平台选择等因素。我们提供的系统化方法和实战指导能帮你快速突破冷启动期，进入增长快车道。'
-                      : 'Based on student feedback, average growth is 30k-100k followers in 3 months, 200k-500k in 6 months. Actual growth depends on content quality, update frequency, platform selection, etc. Our systematic methods and practical guidance help you quickly break through the cold start period and enter rapid growth.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '现实的月收入预期是多少？' : 'What is a realistic monthly income expectation?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '初级（1-5万粉丝）：¥3,000-10,000/月（小额广告、淘宝客）；中级（5-20万粉丝）：¥10,000-50,000/月（品牌合作、知识付费）；高级（20万+粉丝）：¥50,000-200,000+/月（深度合作、私域变现、团队化运营）。收入因人而异，但系统化运营能大大提升变现效率。'
-                      : 'Beginner (10k-50k followers): $500-1,500/month (small ads, affiliate marketing); Intermediate (50k-200k followers): $1,500-7,000/month (brand partnerships, knowledge monetization); Advanced (200k+ followers): $7,000-28,000+/month (deep partnerships, private domain monetization, team operations). Income varies by individual, but systematic operations significantly improve monetization efficiency.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '培训后有什么持续支持？' : 'What ongoing support is available after training?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '加入终身学习社群！享受：定期分享最新平台玩法和算法规则、资源对接（品牌合作、创作者联动）、案例拆解和答疑、工具和模板持续更新。你的个人品牌之路不孤单，我们会持续为你赋能。'
-                      : 'Join the lifetime learning community! Enjoy: regular updates on latest platform strategies and algorithm rules, resource connections (brand partnerships, creator collaborations), case breakdowns and Q&A, continuous tool and template updates. You\'re never alone on your personal brand journey—we continuously empower you.'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* AI Tools & Resources */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-gradient-to-br from-blue-50/30 to-white p-8 border-l-4 border-blue-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                {isZh ? 'AI工具与资源' : 'AI Tools & Resources'}
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '提供哪些AI工具支持？' : 'What AI tools are provided?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '我们深度整合多种AI工具：ChatGPT（文案创作、标题生成、脚本策划）、Midjourney（配图生成、视觉设计）、剪映AI（智能剪辑、字幕生成）、数据分析工具（飞瓜、蝉妈妈）。所有工具都有详细教程和使用模板，让你快速上手。'
-                      : 'We deeply integrate various AI tools: ChatGPT (copywriting, title generation, script planning), Midjourney (image generation, visual design), Jianying AI (smart editing, subtitle generation), analytics tools (Feigua, Chanmama). All tools come with detailed tutorials and templates for quick mastery.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '提供哪些实用资源？' : 'What practical resources are provided?'}
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
-                    <li><strong>{isZh ? '内容创作' : 'Content Creation'}</strong>: {isZh ? '1000+爆款标题库、各类脚本模板、Canva设计模板' : '1000+ viral title library, various script templates, Canva design templates'}</li>
-                    <li><strong>{isZh ? '数据分析' : 'Analytics'}</strong>: {isZh ? '飞瓜数据、蝉妈妈、Google Analytics等工具使用指南' : 'Usage guides for Feigua Data, Chanmama, Google Analytics, etc.'}</li>
-                    <li><strong>{isZh ? '运营资源' : 'Operations'}</strong>: {isZh ? '运营日历、SOP标准流程、平台规则文档' : 'Content calendar, SOP workflows, platform rules documentation'}</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? 'AI能否完全替代人工创作？' : 'Can AI completely replace manual creation?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? 'AI是辅助工具，不是替代工具。它能大大提升效率（10倍+），但个人的创意、经历、观点才是内容的核心价值。我们教你如何结合AI工具和个人特色，既保证内容质量，又提高产出效率。AI+人工的组合是最优解。'
-                      : 'AI is an assistive tool, not a replacement. It can greatly improve efficiency (10x+), but your personal creativity, experiences, and perspectives are the core value of content. We teach you how to combine AI tools with personal characteristics to ensure content quality while improving output efficiency. The AI+human combination is optimal.'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Other Questions */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="bg-gradient-to-br from-blue-50/30 to-white p-8 border-l-4 border-blue-500"
-            >
-              <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                {isZh ? '其他问题' : 'Other Questions'}
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '适合哪些人群？' : 'Who is this suitable for?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '职场人士（想打造个人影响力、实现副业收入）、自由职业者（需要个人品牌获客）、创业者（通过内容营销推广产品/服务）、在校学生（提前积累个人品牌资产）。只要你有想分享的内容和持续创作的动力，都适合参加。'
-                      : 'Working professionals (want to build personal influence, achieve side income), freelancers (need personal brand for customer acquisition), entrepreneurs (promote products/services through content marketing), students (accumulate personal brand assets early). Suitable for anyone with content to share and motivation for continuous creation.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '我比较内向，适合做个人品牌吗？' : 'I\'m introverted, is personal branding suitable for me?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '完全适合！个人品牌不等于"网红"。很多成功的个人品牌创作者都是内向性格，他们通过深度内容、专业知识分享建立影响力。我们教你找到适合自己性格的内容形式：不想出镜可以做图文、音频，不想说话可以做字幕视频。重要的是内容价值，而非表演能力。'
-                      : 'Absolutely suitable! Personal branding doesn\'t equal "influencer." Many successful personal brand creators are introverted, building influence through deep content and professional knowledge sharing. We teach you to find content formats that suit your personality: don\'t want to appear on camera? Do images+text or audio; don\'t want to speak? Do subtitle videos. What matters is content value, not performance ability.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '会不会影响现在的工作？' : 'Will this affect my current job?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '不会！我们的课程设计灵活，适合在职人员利用业余时间学习。每周10-15小时的投入，可以安排在晚上和周末。很多学员都是一边工作一边打造个人品牌，等影响力和收入达到一定程度后再考虑全职。这是最稳健的路径。'
-                      : 'No! Our course design is flexible, suitable for working professionals using spare time. 10-15 hours per week can be scheduled in evenings and weekends. Many students build personal brands while working, considering full-time only after influence and income reach certain levels. This is the most prudent path.'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {isZh ? '个人品牌是长期价值吗？' : 'Is personal branding long-term value?'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isZh
-                      ? '绝对是！个人品牌是可持续的资产，会随时间增值。与传统工作"卖时间"不同，个人品牌是"卖影响力"——你的内容24小时为你工作，粉丝和影响力会不断积累。即使平台变化，你的个人品牌价值依然存在，可以迁移到新平台。这是真正的长期投资。'
-                      : 'Absolutely! Personal branding is a sustainable asset that appreciates over time. Unlike traditional work "selling time," personal branding is "selling influence"—your content works for you 24/7, followers and influence continuously accumulate. Even as platforms change, your personal brand value remains and can migrate to new platforms. This is true long-term investment.'}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Final CTA Section */}
-      <div className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px]"
-            animate={{
-              rotate: [0, 360],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 rounded-full blur-3xl opacity-20"></div>
-          </motion.div>
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center gap-3 mb-8">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-blue-400"></div>
-              <span className="text-sm font-bold tracking-widest text-gray-400 uppercase">
-                {isZh ? '现在就开始' : 'Start Now'}
-              </span>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-blue-400"></div>
-            </div>
-
-            <h2 className="text-5xl lg:text-7xl font-black mb-8 leading-tight">
-              {isZh ? '准备好了吗？' : 'Ready?'}
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-                {isZh ? '打造你的个人品牌' : 'Build Your Brand'}
-              </span>
-            </h2>
-
-            <p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              {isZh
-                ? '12周系统化培训，全平台运营策略，AI工具赋能，终身学习社群。从0到1打造你的个人影响力。'
-                : '12-week systematic training, multi-platform strategies, AI-powered tools, lifetime community. Build your influence from scratch.'}
-            </p>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
-              {[
-                { icon: '📱', value: '8+', label: isZh ? '主流平台' : 'Platforms' },
-                { icon: '🎯', value: '12', label: isZh ? '周培训' : 'Weeks' },
-                { icon: '🤖', value: 'AI', label: isZh ? '工具赋能' : 'Powered' },
-                { icon: '💰', value: isZh ? '¥8万+' : '$11k+', label: isZh ? '月收入' : 'Monthly' },
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:bg-white/10 transition-all"
-                >
-                  <div className="text-4xl mb-2">{item.icon}</div>
-                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mb-1">
-                    {item.value}
-                  </div>
-                  <div className="text-xs text-gray-400 font-semibold uppercase tracking-wider">
-                    {item.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="flex justify-center">
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                {isZh
+                  ? '立即联系我们，了解更多关于个人品牌孵化的详细信息，我们将在24小时内回复您的咨询。'
+                  : 'Contact us now to learn more about our personal brand incubation. We\'ll respond to your inquiry within 24 hours.'}
+              </p>
               <button
                 onClick={handleApply}
-                className="group px-12 py-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/50 hover:-translate-y-2 relative overflow-hidden"
+                className="px-10 py-4 bg-gradient-to-r from-orange-500 to-blue-500 text-white font-bold text-lg transition-all hover:shadow-2xl hover:-translate-y-1"
               >
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  {isZh ? '立即咨询' : 'Inquire Now'}
-                  <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
+                {isZh ? '立即咨询' : 'Contact Us Now'}
               </button>
             </div>
-
-            <p className="text-gray-500 text-sm mt-8">
-              {isZh
-                ? '加入终身学习社群，与优秀创作者共同成长'
-                : 'Join lifetime learning community, grow with top creators'}
-            </p>
           </motion.div>
         </div>
       </div>
